@@ -1,0 +1,31 @@
+.service-area {
+    padding: var(--padding-section);
+}
+
+.area-header {
+    margin-bottom: 3rem;
+}
+
+.cities-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.city-tag {
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.city-tag:hover {
+    border-color: var(--primary-green);
+    color: var(--primary-green);
+    background-color: var(--bg-alt);
+}
