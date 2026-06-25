@@ -1,0 +1,30 @@
+.eco-strip {
+    background-color: var(--primary-green);
+    color: #fff;
+    padding: 2.5rem 4rem;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.eco-strip-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 1200px;
+}
+
+.eco-icon {
+    font-size: 2.5rem;
+}
+
+.eco-text strong {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+.eco-text span {
+    font-size: 1rem;
+    opacity: 0.9;
+}

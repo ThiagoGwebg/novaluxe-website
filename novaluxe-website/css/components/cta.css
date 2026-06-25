@@ -1,0 +1,12 @@
+.cta {
+    padding: var(--padding-section);
+    background-color: var(--primary-green);
+    text-align: center;
+}
+
+.cta-desc {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+}
