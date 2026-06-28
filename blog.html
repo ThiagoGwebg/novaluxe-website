@@ -1,126 +1,353 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - NovaLuxe Home Cleaning</title>
-    <meta name="description" content="Insights, tips, and expert advice from NovaLuxe for maintaining a spotless, healthy, and luxurious home environment.">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cleaning & Lifestyle Blog | NovaLuxe Home Cleaning</title>
+<meta content="Insights, tips, and expert advice from NovaLuxe for maintaining a spotless, healthy, and luxurious home environment." name="description"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    primary: "#3B5B43",
+                    primaryDark: "#2d4533",
+                    bgCream: "#F5F0E8",
+                    bgBeige: "#f0f0eb",
+                    textDark: "#2D3748",
+                    textMuted: "#4A5568",
+                    navDark: "#0d1f14",
+                    borderBase: "#E2E8F0"
+                },
+                borderRadius: {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+                },
+                fontFamily: {
+                    serif: ["Playfair Display", "serif"],
+                    body: ["Inter", "sans-serif"]
+                }
+            }
+        }
+    }
+</script>
+<style>
+    body {
+        background-color: #F5F0E8;
+        color: #2D3748;
+        font-family: 'Inter', sans-serif;
+    }
+    .font-serif { font-family: 'Playfair Display', serif; }
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        font-size: inherit;
+        vertical-align: middle;
+    }
+    .uppercase-label {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: #718096;
+        text-transform: uppercase;
+    }
+    .article-card:hover img { transform: scale(1.04); }
+    .article-card img { transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); }
+
+    /* Navbar */
+    .btn-nav { display: inline-flex; align-items: center; gap: 0.5rem; }
+    .btn-nav::before { display: none; }
+
+    /* Scroll reveal */
+    .reveal-card {
+        opacity: 0;
+        transform: translateY(32px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
 </head>
-<body>
-    <header class="navbar">
-        <a href="index.html" class="logo">
+<body class="antialiased">
+
+<!-- Navbar -->
+<nav class="bg-[#0d1f14] sticky top-0 z-50 shadow-md">
+    <div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto" style="height:72px;">
+        <a href="index.html">
             <img src="assets/images/novaluxe-logo.svg" height="42" alt="NovaLuxe">
         </a>
-        <nav class="nav-links">
-            <a href="index.html#services">Services</a>
-            <a href="index.html#about">About Us</a>
-            <a href="index.html#area">Service Area</a>
-            <a href="blog.html">Blog</a>
-        </nav>
-        <a href="index.html#quote" class="btn btn-primary">Request Quote</a>
+        <div class="hidden md:flex items-center gap-x-10">
+            <a class="text-gray-300 text-[0.8rem] tracking-widest uppercase hover:text-white transition-colors duration-300" href="index.html#services">Services</a>
+            <a class="text-gray-300 text-[0.8rem] tracking-widest uppercase hover:text-white transition-colors duration-300" href="index.html#about-us">About Us</a>
+            <a class="text-gray-300 text-[0.8rem] tracking-widest uppercase hover:text-white transition-colors duration-300" href="index.html#area">Service Area</a>
+            <a class="text-white border-b border-white pb-0.5 text-[0.8rem] tracking-widest uppercase" href="blog.html">Blog</a>
+        </div>
+        <a href="index.html#quote" class="bg-[#3B5B43] text-white px-5 py-2.5 rounded-lg text-sm font-medium tracking-wide hover:bg-[#2d4533] transition-colors">
+            Request Quote
+        </a>
+    </div>
+</nav>
+
+<main class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+
+    <!-- Blog Header -->
+    <header class="mb-16 text-center">
+        <span class="uppercase-label block mb-4">Cleaning &amp; Lifestyle</span>
+        <h1 class="text-5xl md:text-6xl font-serif italic text-[#2D3748] mb-6">Insights &amp; Expert Advice</h1>
+        <p class="text-[#4A5568] max-w-2xl mx-auto text-lg leading-relaxed">
+            Tips, guides, and expert advice for maintaining a spotless, healthy, and beautiful home environment.
+        </p>
     </header>
 
-    <div class="blog-header">
-        <h1>Cleaning & Lifestyle Blog</h1>
-        <p>Insights, tips, and expert advice for maintaining a spotless and healthy home environment.</p>
-    </div>
+    <!-- Featured Post -->
+    <section class="mb-20 overflow-hidden bg-white rounded-xl shadow-[0_4px_28px_rgba(0,0,0,0.07)] article-card reveal-card">
+        <div class="flex flex-col lg:flex-row">
+            <div class="lg:w-3/5 overflow-hidden">
+                <img class="w-full h-[380px] lg:h-[480px] object-cover"
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZQZ8-9eAA4gg4hEDOxxYjFoZbEmXyiwnR9p6Jc2-oB7WOSU98bJsGCv1j0vpKZ5YTNGhNknWlNwd4fjD9KmpvKQOvNLLhi4yILc7j0Yl726x68Tm5sw3fKsDIDo5ePYbu_6bxdJcRuFiPEcH22YJrk9QEBdLmtoS80345aDWVllLMgHQcsEJ5rQTen17-rKCgoBtsOwkDXVRQZ4J4vSE4mowYbIIlFsE4zGRncPhAyr_tE4YAVw_w6XB7VNwctNdnqozziNpdDIA"
+                     alt="Luxury clean living room"/>
+            </div>
+            <div class="lg:w-2/5 p-8 lg:p-12 flex flex-col justify-center">
+                <span class="inline-block bg-[#f0f0eb] text-[#3B5B43] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-6">Cleaning Practices</span>
+                <h2 class="text-3xl md:text-4xl font-serif text-[#2D3748] mb-4 leading-tight">The Hidden Risk of Cross-Contamination in Your Home</h2>
+                <p class="text-[#4A5568] mb-8 leading-relaxed">
+                    Most people associate a clean home with shiny floors and spotless countertops. But true cleanliness goes far beyond appearances. Discover why using separate tools for different zones is crucial for real hygiene.
+                </p>
+                <a class="group inline-flex items-center gap-2 text-[#3B5B43] font-semibold tracking-wide uppercase text-sm hover:text-[#2d4533] transition-colors" href="blog-post-1.html">
+                    Read Article
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform text-base">arrow_forward</span>
+                </a>
+            </div>
+        </div>
+    </section>
 
-    <div class="blog-container">
-        <main class="blog-main">
-            <!-- Post 1 -->
-            <article class="blog-post-card">
-                <div class="blog-post-image" style="background-image: url('assets/images/services/detail.png');"></div>
-                <div class="blog-post-content">
-                    <div class="blog-post-meta">Cleaning Practices • By NovaLuxe Team</div>
-                    <h2 class="blog-post-title"><a href="blog-post-1.html">The Hidden Risk of Cross-Contamination</a></h2>
-                    <p class="blog-post-excerpt">Most people associate a clean home with shiny floors and spotless countertops. However, true cleanliness goes far beyond appearances. One of the most common cleaning mistakes is cross-contamination...</p>
-                    <a href="blog-post-1.html" class="read-more-btn">Read Article</a>
-                </div>
-            </article>
+    <!-- Grid + Sidebar -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
-            <!-- Post 2 -->
-            <article class="blog-post-card">
-                <div class="blog-post-image" style="background-image: url('assets/images/about/why-us.png');"></div>
-                <div class="blog-post-content">
-                    <div class="blog-post-meta">Eco-Friendly • By NovaLuxe Team</div>
-                    <h2 class="blog-post-title"><a href="blog-post-2.html">Eco-Friendly Cleaning for Families, Pets, and the Environment</a></h2>
-                    <p class="blog-post-excerpt">Many cleaning products contain harsh chemicals that may leave residues on surfaces, floors, and furniture. While effective, these products are not always the best choice for homes with children and pets...</p>
-                    <a href="blog-post-2.html" class="read-more-btn">Read Article</a>
-                </div>
-            </article>
+        <!-- Articles Grid -->
+        <div class="lg:col-span-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
 
-            <!-- Post 3 -->
-            <article class="blog-post-card">
-                <div class="blog-post-image" style="background-image: url('assets/images/services/living-room.png');"></div>
-                <div class="blog-post-content">
-                    <div class="blog-post-meta">Maintenance • By NovaLuxe Team</div>
-                    <h2 class="blog-post-title"><a href="blog-post-3.html">Why Regular Professional Cleaning Is Worth It</a></h2>
-                    <p class="blog-post-excerpt">Life gets busy, and keeping up with household cleaning can quickly become overwhelming. Regular professional cleaning helps prevent dust buildup, stains, odors, and wear on surfaces throughout the home...</p>
-                    <a href="blog-post-3.html" class="read-more-btn">Read Article</a>
-                </div>
-            </article>
+                <!-- Post 2 -->
+                <article class="article-card group reveal-card">
+                    <div class="overflow-hidden rounded-lg mb-6 aspect-[4/3]">
+                        <img class="w-full h-full object-cover"
+                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxlngNJx9SW6TUUKO9P3ZFU2oxv8ibBT_sn6RjCT9NNZzgyfWdaCWr4v8jHP5-qIyxbRZXzjJQoRG_PFamJGKyQQTcnn3uwOEGRHqAz3ufXZi_6_qF7TfKlXeQAgUSSjKFfQKI08ddsIJ6SgreYRYKOjLu-e_mQVPNWSn82zTnX60NNu4KiI0dV3U0B2xjHjmAkJg_41-gaE4wEzOYAbrsb-lPKUdL8MRWlEBPRpvC9d9yU2OjlD1G85oNa3dDJyt8KfruqLbkV-4"
+                             alt="Eco-friendly cleaning products"/>
+                    </div>
+                    <span class="uppercase-label text-xs text-[#3B5B43] mb-3 block">Eco-Friendly</span>
+                    <h3 class="text-2xl font-serif text-[#2D3748] mb-3 group-hover:text-[#3B5B43] transition-colors leading-snug">Eco-Friendly Cleaning for Families, Pets, and the Environment</h3>
+                    <p class="text-[#4A5568] text-sm leading-relaxed mb-4">
+                        Many cleaning products contain harsh chemicals that may leave residues on surfaces. Learn which safe, eco-certified alternatives work best for homes with children and pets.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-xs text-[#718096] uppercase tracking-widest gap-1">
+                            <span class="material-symbols-outlined text-sm">schedule</span>
+                            5 min read
+                        </div>
+                        <a class="text-[#3B5B43] text-xs font-semibold uppercase tracking-widest hover:text-[#2d4533] transition-colors" href="blog-post-2.html">Read Article →</a>
+                    </div>
+                </article>
 
-            <!-- Post 4 -->
-            <article class="blog-post-card">
-                <div class="blog-post-image" style="background-image: url('assets/images/services/kitchen.png');"></div>
-                <div class="blog-post-content">
-                    <div class="blog-post-meta">Product Guide • By NovaLuxe Team</div>
-                    <h2 class="blog-post-title"><a href="blog-post-4.html">Choosing the Right Cleaning Products Matters</a></h2>
-                    <p class="blog-post-excerpt">One of the biggest misconceptions about cleaning is that a single product can be used everywhere. Different materials require different care. Wood, stone, stainless steel, glass, and specialty finishes...</p>
-                    <a href="blog-post-4.html" class="read-more-btn">Read Article</a>
-                </div>
-            </article>
-        </main>
+                <!-- Post 3 -->
+                <article class="article-card group reveal-card">
+                    <div class="overflow-hidden rounded-lg mb-6 aspect-[4/3]">
+                        <img class="w-full h-full object-cover"
+                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEjlu51Yia1wPimgzUO19KZaD6Owms-uWuxVoRWrN7sG4XBQcXfkJlv9wAdcLySqzIRWxjepSuxwIJFrKV1aCiYU6Ijpy8rLS37njH2AeYfD5ul05gMAMp_hHk74C8o4XeohJVQHpil-wPH-9attcA2uyxYj7o1DIufg0H82anpyC4ublUM6NGiDC8EQrNT7KWCoMe6kGvSdJFqIwNN8rvmkn-dbLMpDbCCl-UzJW0FG_SAyJjfko41lHTQJfAoFpG4ZjfRs9m2WU"
+                             alt="Professional cleaning service"/>
+                    </div>
+                    <span class="uppercase-label text-xs text-[#3B5B43] mb-3 block">Maintenance</span>
+                    <h3 class="text-2xl font-serif text-[#2D3748] mb-3 group-hover:text-[#3B5B43] transition-colors leading-snug">Why Regular Professional Cleaning Is Worth It</h3>
+                    <p class="text-[#4A5568] text-sm leading-relaxed mb-4">
+                        Life gets busy. Regular professional cleaning helps prevent dust buildup, stains, odors, and wear on surfaces — protecting your home and your wellbeing.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-xs text-[#718096] uppercase tracking-widest gap-1">
+                            <span class="material-symbols-outlined text-sm">schedule</span>
+                            4 min read
+                        </div>
+                        <a class="text-[#3B5B43] text-xs font-semibold uppercase tracking-widest hover:text-[#2d4533] transition-colors" href="blog-post-3.html">Read Article →</a>
+                    </div>
+                </article>
 
-        <aside class="blog-sidebar">
-            <div class="blog-widget">
-                <h3 class="widget-title">Categories</h3>
-                <ul class="widget-list">
-                    <li><a href="#">Cleaning Practices (1)</a></li>
-                    <li><a href="#">Eco-Friendly (1)</a></li>
-                    <li><a href="#">Maintenance (1)</a></li>
-                    <li><a href="#">Product Guide (1)</a></li>
+                <!-- Post 4 -->
+                <article class="article-card group reveal-card md:col-span-2">
+                    <div class="flex flex-col md:flex-row gap-8 bg-white rounded-xl p-6 shadow-[0_4px_18px_rgba(0,0,0,0.05)]">
+                        <div class="overflow-hidden rounded-lg md:w-2/5 aspect-[4/3] md:aspect-auto flex-shrink-0">
+                            <img class="w-full h-full object-cover"
+                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoPz7lx6hsw7JSz_siXz16n4FHCWpDq7KSDWYmuR06Hn2DFN1RZzvaP7RIHCi0raIFD2yU7mNmX5y_alttxk4YlZrDAZcEY5Zj4q7IMesZdRzMwdXFUDb8nybecKGGPkIPLHTRejfoAIkF3yd9dpp4sC9bMyCVHH6W94ggtv99f9fHt-RNmf5BEQmmblcIACLO_Ps1LUdNi0XERmMkr7kAXbgqCYpbKxBMuBCyOgYaUDXxBvVShdvj3P1M09D_jC5JOZorSb_d64M"
+                                 alt="Cleaning product selection"/>
+                        </div>
+                        <div class="flex flex-col justify-center md:w-3/5">
+                            <span class="uppercase-label text-xs text-[#3B5B43] mb-3 block">Product Guide</span>
+                            <h3 class="text-2xl font-serif text-[#2D3748] mb-3 group-hover:text-[#3B5B43] transition-colors leading-snug">Choosing the Right Cleaning Products Matters</h3>
+                            <p class="text-[#4A5568] text-sm leading-relaxed mb-5">
+                                One of the biggest misconceptions about cleaning is that a single product can be used everywhere. Wood, stone, stainless steel, glass, and specialty finishes all require different care.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center text-xs text-[#718096] uppercase tracking-widest gap-1">
+                                    <span class="material-symbols-outlined text-sm">schedule</span>
+                                    6 min read
+                                </div>
+                                <a class="text-[#3B5B43] text-xs font-semibold uppercase tracking-widest hover:text-[#2d4533] transition-colors" href="blog-post-4.html">Read Article →</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="lg:col-span-4 space-y-8">
+
+            <!-- Categories -->
+            <div class="bg-white p-8 rounded-xl shadow-sm">
+                <h4 class="uppercase-label mb-6">Categories</h4>
+                <ul class="space-y-4">
+                    <li class="flex justify-between items-center group cursor-pointer">
+                        <span class="text-[#2D3748] font-medium text-sm group-hover:text-[#3B5B43] transition-colors">Cleaning Practices</span>
+                        <span class="text-xs font-bold text-[#718096] bg-[#f0f0eb] w-6 h-6 flex items-center justify-center rounded-full">1</span>
+                    </li>
+                    <li class="flex justify-between items-center group cursor-pointer">
+                        <span class="text-[#2D3748] font-medium text-sm group-hover:text-[#3B5B43] transition-colors">Eco-Friendly</span>
+                        <span class="text-xs font-bold text-[#718096] bg-[#f0f0eb] w-6 h-6 flex items-center justify-center rounded-full">1</span>
+                    </li>
+                    <li class="flex justify-between items-center group cursor-pointer">
+                        <span class="text-[#2D3748] font-medium text-sm group-hover:text-[#3B5B43] transition-colors">Maintenance</span>
+                        <span class="text-xs font-bold text-[#718096] bg-[#f0f0eb] w-6 h-6 flex items-center justify-center rounded-full">1</span>
+                    </li>
+                    <li class="flex justify-between items-center group cursor-pointer">
+                        <span class="text-[#2D3748] font-medium text-sm group-hover:text-[#3B5B43] transition-colors">Product Guide</span>
+                        <span class="text-xs font-bold text-[#718096] bg-[#f0f0eb] w-6 h-6 flex items-center justify-center rounded-full">1</span>
+                    </li>
                 </ul>
             </div>
 
-            <div class="blog-widget">
-                <h3 class="widget-title">Recent Posts</h3>
-                <ul class="widget-list">
-                    <li><a href="blog-post-1.html">The Hidden Risk of Cross-Contamination</a></li>
-                    <li><a href="blog-post-2.html">Eco-Friendly Cleaning for Families</a></li>
-                    <li><a href="blog-post-3.html">Why Regular Professional Cleaning Is Worth It</a></li>
-                    <li><a href="blog-post-4.html">Choosing the Right Cleaning Products Matters</a></li>
-                </ul>
+            <!-- Recent Posts -->
+            <div class="bg-white p-8 rounded-xl shadow-sm">
+                <h4 class="uppercase-label mb-6">Recent Articles</h4>
+                <div class="space-y-5">
+                    <a class="flex gap-4 group" href="blog-post-1.html">
+                        <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="assets/images/services/detail.png" alt="Cross-contamination article"/>
+                        </div>
+                        <div>
+                            <h5 class="text-sm font-semibold leading-snug group-hover:text-[#3B5B43] transition-colors">The Hidden Risk of Cross-Contamination</h5>
+                            <span class="text-[10px] text-[#718096] uppercase tracking-widest">Cleaning Practices</span>
+                        </div>
+                    </a>
+                    <a class="flex gap-4 group" href="blog-post-2.html">
+                        <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="assets/images/about/why-us.png" alt="Eco-friendly article"/>
+                        </div>
+                        <div>
+                            <h5 class="text-sm font-semibold leading-snug group-hover:text-[#3B5B43] transition-colors">Eco-Friendly Cleaning for Families & Pets</h5>
+                            <span class="text-[10px] text-[#718096] uppercase tracking-widest">Eco-Friendly</span>
+                        </div>
+                    </a>
+                    <a class="flex gap-4 group" href="blog-post-3.html">
+                        <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="assets/images/services/living-room.png" alt="Professional cleaning article"/>
+                        </div>
+                        <div>
+                            <h5 class="text-sm font-semibold leading-snug group-hover:text-[#3B5B43] transition-colors">Why Regular Professional Cleaning Is Worth It</h5>
+                            <span class="text-[10px] text-[#718096] uppercase tracking-widest">Maintenance</span>
+                        </div>
+                    </a>
+                    <a class="flex gap-4 group" href="blog-post-4.html">
+                        <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="assets/images/services/kitchen.png" alt="Products article"/>
+                        </div>
+                        <div>
+                            <h5 class="text-sm font-semibold leading-snug group-hover:text-[#3B5B43] transition-colors">Choosing the Right Cleaning Products Matters</h5>
+                            <span class="text-[10px] text-[#718096] uppercase tracking-widest">Product Guide</span>
+                        </div>
+                    </a>
+                </div>
             </div>
-            
-            <div class="blog-widget">
-                <h3 class="widget-title">About the Author</h3>
-                <p style="color: #4A5568; font-size: 0.95rem; line-height: 1.6;">NovaLuxe is a premium home cleaning service dedicated to providing immaculate living spaces through sustainable and professional practices.</p>
+
+            <!-- CTA Box -->
+            <div class="bg-[#3B5B43] p-10 rounded-xl text-white relative overflow-hidden group">
+                <div class="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+                <div class="relative z-10">
+                    <h4 class="text-2xl font-serif italic mb-3">Ready for a spotless home?</h4>
+                    <p class="text-white/80 text-sm leading-relaxed mb-8">
+                        Experience the luxury of coming back to a perfectly clean space. Our service is tailored to your home's unique needs.
+                    </p>
+                    <a href="index.html#quote" class="block w-full py-3.5 bg-white text-[#3B5B43] font-bold tracking-widest text-xs uppercase text-center rounded hover:bg-[#F5F0E8] transition-colors">
+                        Request Free Quote
+                    </a>
+                </div>
             </div>
+
         </aside>
     </div>
+</main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-top">
-            <div class="footer-brand">
-                <div class="logo light">
-                    <span class="logo-icon">N</span>
-                    <div class="logo-text-wrapper">
-                        <span class="logo-text">NOVALUXE</span>
-                        <span class="logo-subtext">HOME CLEANING</span>
-                    </div>
+<!-- Footer -->
+<footer class="bg-[#2d4533] mt-24">
+    <div class="w-full px-8 py-12 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-start gap-8 mb-10">
+            <div>
+                <img src="assets/images/novaluxe-logo.svg" height="36" alt="NovaLuxe" style="filter: brightness(0) invert(1); opacity: 0.9;">
+                <p class="text-gray-300 text-sm mt-4 max-w-xs leading-relaxed">Luxury residential cleaning service in the San Francisco Bay Area. Every home shines with the care it deserves.</p>
+            </div>
+            <div class="flex gap-16">
+                <div>
+                    <h4 class="text-[0.7rem] font-semibold tracking-widest uppercase text-white/50 mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a class="text-gray-300 text-sm hover:text-white transition-colors" href="index.html#services">Services</a></li>
+                        <li><a class="text-gray-300 text-sm hover:text-white transition-colors" href="index.html#about-us">About Us</a></li>
+                        <li><a class="text-gray-300 text-sm hover:text-white transition-colors" href="index.html#area">Service Area</a></li>
+                        <li><a class="text-gray-300 text-sm hover:text-white transition-colors" href="index.html#quote">Request Quote</a></li>
+                    </ul>
                 </div>
-                <p>Elevating the standard of residential cleaning with professional, reliable, and luxury service.</p>
+                <div>
+                    <h4 class="text-[0.7rem] font-semibold tracking-widest uppercase text-white/50 mb-4">Blog</h4>
+                    <ul class="space-y-2">
+                        <li><a class="text-gray-300 text-sm hover:text-white transition-colors" href="blog-post-1.html">Cross-Contamination</a></li>
+                        <li><a class="text-gray-300 text-sm hover:text-white transition-colors" href="blog-post-2.html">Eco-Friendly Cleaning</a></li>
+                        <li><a class="text-gray-300 text-sm hover:text-white transition-colors" href="blog-post-3.html">Professional Cleaning</a></li>
+                        <li><a class="text-gray-300 text-sm hover:text-white transition-colors" href="blog-post-4.html">Choosing Products</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 NovaLuxe Home Cleaning. All rights reserved.</p>
+        <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-white/50 text-xs">&copy; 2026 NovaLuxe Home Cleaning. All rights reserved.</p>
+            <div class="flex gap-6">
+                <a class="text-white/50 text-xs hover:text-white/80 transition-colors" href="#">Privacy</a>
+                <a class="text-white/50 text-xs hover:text-white/80 transition-colors" href="#">Terms</a>
+            </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <script src="js/script.js"></script>
+<script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, i * 100);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal-card').forEach(card => observer.observe(card));
+</script>
 </body>
 </html>

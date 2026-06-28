@@ -1,79 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Regular Professional Cleaning - NovaLuxe</title>
-    <meta name="description" content="Regular professional cleaning prevents dust, stains, odors, and surface wear. See why small, consistent maintenance avoids bigger problems.">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Why Regular Professional Cleaning Is Worth It | NovaLuxe</title>
+<meta content="Regular professional cleaning prevents dust, stains, odors, and surface wear. See why small, consistent maintenance avoids bigger problems." name="description"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    theme: { extend: { colors: { primary: "#3B5B43" }, fontFamily: { display: ["Playfair Display","serif"] } } }
+  }
+</script>
+<style>
+  body { background-color: #F5F0E8; font-family: 'Inter', sans-serif; color: #2D3748; }
+  .drop-cap::first-letter { float:left; font-size:5rem; line-height:4rem; padding-right:.75rem; padding-top:.25rem; font-family:'Playfair Display',serif; color:#3B5B43; font-weight:700; }
+  .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; vertical-align:middle; }
+</style>
 </head>
-<body>
-    <header class="navbar">
-        <a href="index.html" class="logo">
-            <img src="assets/images/novaluxe-logo.svg" height="42" alt="NovaLuxe">
-        </a>
-        <nav class="nav-links">
-            <a href="index.html#services">Services</a>
-            <a href="index.html#about">About Us</a>
-            <a href="index.html#area">Service Area</a>
-            <a href="blog.html">Blog</a>
-        </nav>
-        <a href="index.html#quote" class="btn btn-primary">Request Quote</a>
-    </header>
+<body class="antialiased">
 
-    <div class="blog-post-single">
-        <div class="single-post-header">
-            <div class="blog-post-meta">Maintenance • By NovaLuxe Team</div>
-            <h1 class="single-post-title">Why Regular Professional Cleaning Is Worth It</h1>
-            <p class="single-post-subtitle">Small Maintenance Prevents Bigger Problems</p>
+<header class="sticky top-0 z-50 bg-[#0d1f14] shadow-md" style="transition: transform 0.3s ease;">
+  <div class="flex justify-between items-center w-full px-8 max-w-7xl mx-auto" style="height:72px;">
+    <a href="index.html"><img src="assets/images/novaluxe-logo.svg" height="42" alt="NovaLuxe"/></a>
+    <nav class="hidden md:flex items-center gap-x-10">
+      <a class="text-gray-300 text-[0.8rem] tracking-widest uppercase hover:text-white transition-colors" href="index.html#services">Services</a>
+      <a class="text-gray-300 text-[0.8rem] tracking-widest uppercase hover:text-white transition-colors" href="index.html#about-us">About Us</a>
+      <a class="text-gray-300 text-[0.8rem] tracking-widest uppercase hover:text-white transition-colors" href="index.html#area">Service Area</a>
+      <a class="text-white border-b border-[#3B5B43] pb-0.5 text-[0.8rem] tracking-widest uppercase" href="blog.html">Blog</a>
+    </nav>
+    <a href="index.html#quote" class="bg-[#3B5B43] hover:bg-[#2d4533] text-white px-5 py-2.5 rounded-full text-xs font-semibold tracking-widest uppercase transition-all">Request Quote</a>
+  </div>
+</header>
+
+<main>
+  <section class="relative h-[520px] w-full overflow-hidden">
+    <img src="assets/images/services/living-room.png" alt="Living Room" class="w-full h-full object-cover"/>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent"></div>
+    <div class="absolute inset-0 max-w-7xl mx-auto px-8 flex flex-col justify-end pb-16">
+      <div class="max-w-3xl">
+        <span class="inline-block bg-[#3B5B43] text-white px-3 py-1 text-[0.7rem] font-semibold tracking-widest uppercase mb-5">Maintenance</span>
+        <h1 class="font-['Playfair_Display'] text-5xl md:text-6xl text-white italic leading-tight mb-4">Why Regular Professional<br>Cleaning Is Worth It</h1>
+        <p class="text-white/85 text-xl font-light mb-5">Small Maintenance Prevents Bigger Problems</p>
+        <div class="flex items-center text-white/60 text-xs tracking-widest uppercase gap-3">
+          <span>By NovaLuxe Team</span><span class="text-[#3B5B43]">•</span>
+          <span>4 min read</span><span class="text-[#3B5B43]">•</span>
+          <span>June 2026</span>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <img src="assets/images/services/living-room.png" alt="Living Room Clean" class="single-post-image">
+  <article class="max-w-[750px] mx-auto px-6 py-20">
+    <p class="drop-cap text-[#4A5568] text-lg md:text-xl font-semibold leading-relaxed mb-10">
+      Life gets busy, and keeping up with household cleaning can quickly become overwhelming. The laundry, the dishes, the emails, the meetings — somewhere along the way, your home's deeper maintenance gets pushed further down the list.
+    </p>
+    <p class="text-[#4A5568] text-[1.1rem] leading-[1.9] mb-8">
+      Regular professional cleaning helps prevent dust buildup, stains, odors, and wear on surfaces throughout the home. Instead of waiting until cleaning becomes a major project, routine maintenance keeps your space consistently fresh, organized, and welcoming — a true reflection of the care and investment you've put into your home.
+    </p>
 
-        <article class="single-post-content">
-            <p>Life gets busy, and keeping up with household cleaning can quickly become overwhelming.</p>
-            
-            <p>Regular professional cleaning helps prevent dust buildup, stains, odors, and wear on surfaces throughout the home. Instead of waiting until cleaning becomes a major project, routine maintenance keeps your space consistently fresh, organized, and welcoming.</p>
-            
-            <h2>Attention to Detail</h2>
-            <p>Professional cleaners often notice details that may be overlooked during everyday cleaning, helping preserve furniture, flooring, kitchens, and bathrooms.</p>
-            
-            <p>Beyond appearance, a consistently clean home contributes to improved indoor air quality and a more comfortable living environment.</p>
-            
-            <p>Investing in regular cleaning is not just about convenience—it is also about protecting your home and supporting your family’s well-being.</p>
-            
-            <hr>
-            
-            <h3>Additional Resource</h3>
-            <p>To learn more about how indoor environments affect health, visit the <a href="https://www.lung.org/clean-air/indoor-air/indoor-air-pollutants" target="_blank" rel="noopener noreferrer">American Lung Association on Indoor Air Pollutants</a>.</p>
-        </article>
+    <h2 class="font-['Playfair_Display'] text-3xl text-[#2D3748] mb-6 mt-12 pl-6 border-l-4 border-[#3B5B43]">Attention to Detail</h2>
+    <p class="text-[#4A5568] text-[1.1rem] leading-[1.9] mb-8">
+      Professional cleaners often notice details that may be overlooked during everyday cleaning — early signs of mold in grout lines, limescale forming on fixtures, dust accumulating in HVAC vents. Catching these early helps preserve your furniture, flooring, kitchens, and bathrooms — protecting your investment for years to come.
+    </p>
 
-        <div class="post-footer-nav">
-            <a href="blog-post-2.html" class="read-more-btn btn-back">&larr; Previous Article</a>
-            <a href="blog-post-4.html" class="read-more-btn">Next Article &rarr;</a>
-        </div>
+    <div class="my-12 bg-white border-l-[6px] border-[#3B5B43] p-10 italic text-2xl font-['Playfair_Display'] text-[#2D3748] leading-relaxed rounded-r-lg shadow-sm">
+      "Investing in regular cleaning is not just about convenience — it's about protecting your home and supporting your family's long-term well-being."
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-top">
-            <div class="footer-brand">
-                <div class="logo light">
-                    <span class="logo-icon">N</span>
-                    <div class="logo-text-wrapper">
-                        <span class="logo-text">NOVALUXE</span>
-                        <span class="logo-subtext">HOME CLEANING</span>
-                    </div>
-                </div>
-                <p>Elevating the standard of residential cleaning with professional, reliable, and luxury service.</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 NovaLuxe Home Cleaning. All rights reserved.</p>
-        </div>
-    </footer>
+    <p class="text-[#4A5568] text-[1.1rem] leading-[1.9] mb-8">
+      Beyond appearance, a consistently clean home contributes to improved indoor air quality and a more comfortable living environment. Dust mites, pet dander, and allergens accumulate silently — regular professional maintenance removes them before they become a problem.
+    </p>
 
-    <script src="js/script.js"></script>
+    <h2 class="font-['Playfair_Display'] text-3xl text-[#2D3748] mb-6 mt-12 pl-6 border-l-4 border-[#3B5B43]">The Value of Consistency</h2>
+    <ul class="space-y-4 mb-8">
+      <li class="flex items-start gap-4"><span class="w-2 h-2 rounded-full bg-[#3B5B43] mt-2.5 flex-shrink-0"></span><span class="text-[#4A5568] text-[1.1rem] leading-[1.6]">Prevents deep stains that require costly professional restoration.</span></li>
+      <li class="flex items-start gap-4"><span class="w-2 h-2 rounded-full bg-[#3B5B43] mt-2.5 flex-shrink-0"></span><span class="text-[#4A5568] text-[1.1rem] leading-[1.6]">Extends the life of upholstery, hardwood floors, and stone countertops.</span></li>
+      <li class="flex items-start gap-4"><span class="w-2 h-2 rounded-full bg-[#3B5B43] mt-2.5 flex-shrink-0"></span><span class="text-[#4A5568] text-[1.1rem] leading-[1.6]">Reduces allergens and improves indoor air quality measurably over time.</span></li>
+      <li class="flex items-start gap-4"><span class="w-2 h-2 rounded-full bg-[#3B5B43] mt-2.5 flex-shrink-0"></span><span class="text-[#4A5568] text-[1.1rem] leading-[1.6]">Gives you more time for what matters most — your family and your life.</span></li>
+    </ul>
+
+    <div class="flex items-center justify-center py-14 opacity-25">
+      <div class="h-px w-24 bg-[#2D3748]"></div>
+      <div class="mx-4 rotate-45 border border-[#2D3748] p-1"><div class="w-1 h-1 bg-[#2D3748]"></div></div>
+      <div class="h-px w-24 bg-[#2D3748]"></div>
+    </div>
+
+    <p class="text-[#4A5568] text-[1.05rem] leading-[1.9]">
+      To learn more about how indoor environments affect health, visit the <a href="https://www.lung.org/clean-air/indoor-air/indoor-air-pollutants" target="_blank" rel="noopener noreferrer" class="text-[#3B5B43] underline decoration-[#3B5B43]/30 hover:decoration-[#3B5B43] transition-all">American Lung Association on Indoor Air Pollutants</a>.
+    </p>
+  </article>
+
+  <div class="w-full border-y border-[#E2E8F0] bg-white/60">
+    <div class="max-w-7xl mx-auto px-8 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
+      <a class="group flex items-center text-[#4A5568] text-xs font-semibold tracking-widest uppercase hover:text-[#3B5B43] transition-colors gap-2" href="blog-post-2.html">
+        <span class="material-symbols-outlined group-hover:-translate-x-1 transition-transform">arrow_back</span> Previous Article
+      </a>
+      <img src="assets/images/novaluxe-logo.svg" height="28" alt="NovaLuxe" class="opacity-30 hidden md:block"/>
+      <a class="group flex items-center bg-[#3B5B43] hover:bg-[#2d4533] text-white px-8 py-3 rounded-full text-xs font-semibold tracking-widest uppercase transition-all shadow-md gap-2" href="blog-post-4.html">
+        Next Article <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+
+  <section class="bg-[#0d1f14] py-24 px-8 text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="font-['Playfair_Display'] text-4xl md:text-5xl text-white italic mb-6">Ready for a spotless home?</h2>
+      <p class="text-white/60 text-lg mb-10 font-light">Experience the NovaLuxe difference with a customized cleaning plan tailored to your residence.</p>
+      <a href="index.html#quote" class="inline-block bg-[#F5F0E8] hover:bg-white text-[#0d1f14] px-10 py-4 rounded-full text-xs font-bold tracking-widest uppercase transition-all duration-300">Request Free Quote</a>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-[#2d4533] border-t border-[#3B5B43]/20">
+  <div class="w-full px-8 py-12 flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-6">
+    <div>
+      <img src="assets/images/novaluxe-logo.svg" height="32" alt="NovaLuxe" style="filter:brightness(0) invert(1); opacity:.85;"/>
+      <p class="text-[#F5F0E8]/60 text-sm mt-3">Luxury residential cleaning in the SF Bay Area.</p>
+    </div>
+    <nav class="flex flex-wrap justify-center gap-8">
+      <a class="text-[#F5F0E8]/60 hover:text-[#F5F0E8] text-sm transition-colors" href="index.html#services">Services</a>
+      <a class="text-[#F5F0E8]/60 hover:text-[#F5F0E8] text-sm transition-colors" href="blog.html">Blog</a>
+      <a class="text-[#F5F0E8]/60 hover:text-[#F5F0E8] text-sm transition-colors" href="#">Privacy</a>
+      <a class="text-[#F5F0E8]/60 hover:text-[#F5F0E8] text-sm transition-colors" href="#">Terms</a>
+    </nav>
+    <p class="text-[#F5F0E8]/40 text-xs">&copy; 2026 NovaLuxe Home Cleaning. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  let last = 0;
+  const hdr = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    const top = window.scrollY;
+    hdr.style.transform = top > last && top > 80 ? 'translateY(-100%)' : 'translateY(0)';
+    last = top;
+  });
+</script>
 </body>
 </html>
