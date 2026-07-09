@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
-        "./src/**/*.{html,js}", // Procura por classes em todos os arquivos HTML e JS dentro de src
+        "./*.html", // Adiciona a busca por arquivos HTML na raiz
+        "./src/**/*.{html,js}",
     ],
     theme: {
         extend: {

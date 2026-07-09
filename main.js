@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Scroll reveal ---
-    const revealEls = document.querySelectorAll('.reveal');
+    const revealEls = document.querySelectorAll('.reveal, .hero-kicker, .hero-h1, .hero-sub, .hero-btns, .hero-trust');
     if (revealEls.length > 0) {
         const revealObs = new IntersectionObserver((entries) => {
             entries.forEach(e => {
