@@ -324,8 +324,8 @@
           <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
         </div>
         <span class="text-[#4A5568] text-sm"><strong class="text-[#2D3748]">5.0</strong> average on
-          <a href="https://www.thumbtack.com/instant-results/?query=NovaLuxe%20HomeCleaning" target="_blank" rel="noopener" class="text-[#009FD9] font-semibold hover:underline">Thumbtack</a> &amp;
-          <a href="https://nextdoor.com" target="_blank" rel="noopener" class="text-[#00B246] font-semibold hover:underline">Nextdoor</a>
+          <a id="thumbtack-text-link" href="https://www.thumbtack.com/instant-results/?query=NovaLuxe%20HomeCleaning" target="_blank" rel="noopener" class="text-[#009FD9] font-semibold hover:underline">Thumbtack</a> &amp;
+          <a id="nextdoor-text-link" href="https://nextdoor.com" target="_blank" rel="noopener" class="text-[#00B246] font-semibold hover:underline">Nextdoor</a>
         </span>
       </div>
     </div>
@@ -411,11 +411,11 @@
         <p class="text-[#4A5568] text-sm">Your review helps other families in the Bay Area find trusted, quality cleaning.</p>
       </div>
       <div class="flex flex-col sm:flex-row flex-wrap gap-3 flex-shrink-0">
-        <a href="https://www.thumbtack.com/instant-results/?query=NovaLuxe%20HomeCleaning" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 bg-[#009FD9] hover:bg-[#0088ba] text-white px-6 py-3 rounded-full text-xs font-bold tracking-widest uppercase transition-all shadow-md">
+        <a id="thumbtack-btn-link" href="https://www.thumbtack.com/instant-results/?query=NovaLuxe%20HomeCleaning" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 bg-[#009FD9] hover:bg-[#0088ba] text-white px-6 py-3 rounded-full text-xs font-bold tracking-widest uppercase transition-all shadow-md">
           <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 2a5 5 0 015 5c0 3.5-5 11-5 11S7 10.5 7 7a5 5 0 015-5zm0 3a2 2 0 100 4 2 2 0 000-4z"/></svg>
           Review on Thumbtack
         </a>
-        <a href="https://nextdoor.com/recommendations" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 bg-[#00B246] hover:bg-[#009a3c] text-white px-6 py-3 rounded-full text-xs font-bold tracking-widest uppercase transition-all shadow-md">
+        <a id="nextdoor-btn-link" href="https://nextdoor.com/recommendations" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 bg-[#00B246] hover:bg-[#009a3c] text-white px-6 py-3 rounded-full text-xs font-bold tracking-widest uppercase transition-all shadow-md">
           <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M4 11l8-6 8 6v9H4v-9zm4 9h8v-6H8v6zm4-10a1 1 0 100 2 1 1 0 000-2z"/></svg>
           Recommend on Nextdoor
         </a>
@@ -525,6 +525,20 @@
 </button>
 
 <script>
+  // Configuração dos links das redes/plataformas
+  const THUMBTACK_URL = "https://www.thumbtack.com/instant-results/?query=NovaLuxe%20HomeCleaning";
+  // O link do Nextdoor costuma ser algo como https://nextdoor.com/pages/novaluxe-h/
+  // Substitua a URL abaixo pelo link exato copiado do seu painel comercial do Nextdoor.
+  const NEXTDOOR_URL = "https://nextdoor.com/pages/novaluxe-h"; 
+
+  // Atualiza os links de avaliação dinamicamente
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('thumbtack-text-link')?.setAttribute('href', THUMBTACK_URL);
+    document.getElementById('thumbtack-btn-link')?.setAttribute('href', THUMBTACK_URL);
+    document.getElementById('nextdoor-text-link')?.setAttribute('href', NEXTDOOR_URL);
+    document.getElementById('nextdoor-btn-link')?.setAttribute('href', NEXTDOOR_URL);
+  });
+
   // Navbar hide on scroll
   let lastScroll = 0;
   const nav = document.getElementById('navbar');
