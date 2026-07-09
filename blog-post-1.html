@@ -1,84 +1,155 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Hidden Risk of Cross-Contamination - NovaLuxe</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Hidden Risk of Cross-Contamination | NovaLuxe</title>
+<meta content="Cross-contamination spreads germs from one surface to another. Learn how professional cleaning prevents it and keeps your home truly healthy." name="description"/>
+<link rel="icon" type="image/png" href="assets/images/favicon.png"/>
+<link rel="apple-touch-icon" href="assets/images/favicon.png"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: { primary: "#3B5B43", primaryHover: "#2d4533", cream: "#F5F0E8", beige: "#f0f0eb", dark: "#2D3748", muted: "#4A5568" },
+        fontFamily: { display: ["Playfair Display","serif"], body: ["Inter","sans-serif"] }
+      }
+    }
+  }
+</script>
+<style>
+  body { background-color: #F5F0E8; font-family: 'Inter', sans-serif; color: #2D3748; }
+  .drop-cap::first-letter { float:left; font-size:5rem; line-height:4rem; padding-right:.75rem; padding-top:.25rem; font-family:'Playfair Display',serif; color:#3B5B43; font-weight:700; }
+  .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; vertical-align:middle; }
+</style>
 </head>
-<body>
-    <header class="navbar">
-        <a href="index.html" class="logo">
-            <span class="logo-icon">N</span>
-            <div class="logo-text-wrapper">
-                <span class="logo-text">NOVALUXE</span>
-                <span class="logo-subtext">HOME CLEANING</span>
-            </div>
-        </a>
-        <nav class="nav-links">
-            <a href="index.html#services">Services</a>
-            <a href="index.html#about">About Us</a>
-            <a href="index.html#area">Service Area</a>
-            <a href="blog.html">Blog</a>
-        </nav>
-        <a href="index.html#quote" class="btn btn-primary">Request Quote</a>
-    </header>
+<body class="antialiased">
 
-    <div class="blog-container" style="display: block;">
-        <div class="single-post-header">
-            <div class="blog-post-meta">Cleaning Practices • By NovaLuxe Team</div>
-            <h1 class="blog-post-title" style="font-size: 3rem; font-family: 'Playfair Display', serif;">The Hidden Risk of Cross-Contamination</h1>
-            <p style="color: #718096; margin-top: 1rem;">Why Professional Cleaning Matters More Than You Think</p>
+<!-- Navbar -->
+<header class="sticky top-0 z-50 bg-[#0d1f14] shadow-md" style="transition: transform 0.3s ease;">
+  <div class="flex justify-between items-center w-full px-8 max-w-7xl mx-auto" style="height:72px;">
+    <a href="index.html"><img src="assets/images/novaluxe-logo.png" alt="NovaLuxe" style="height:50px;width:auto;filter:brightness(0) invert(1);"/></a>
+    <nav class="hidden md:flex items-center gap-x-10">
+      <a class="text-gray-300 text-[0.8rem] tracking-widest uppercase hover:text-white transition-colors" href="index.html#services">Services</a>
+      <a class="text-gray-300 text-[0.8rem] tracking-widest uppercase hover:text-white transition-colors" href="index.html#about-us">About Us</a>
+      <a class="text-gray-300 text-[0.8rem] tracking-widest uppercase hover:text-white transition-colors" href="index.html#area">Service Area</a>
+      <a class="text-white border-b border-[#3B5B43] pb-0.5 text-[0.8rem] tracking-widest uppercase" href="blog.html">Blog</a>
+    </nav>
+    <a href="index.html#quote" class="bg-[#3B5B43] hover:bg-[#2d4533] text-white px-5 py-2.5 rounded-full text-xs font-semibold tracking-widest uppercase transition-all">Request Quote</a>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="relative h-[520px] w-full overflow-hidden">
+    <img src="assets/images/services/detail.png" alt="Cleaning detail" class="w-full h-full object-cover"/>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent"></div>
+    <div class="absolute inset-0 max-w-7xl mx-auto px-8 flex flex-col justify-end pb-16">
+      <div class="max-w-3xl">
+        <span class="inline-block bg-[#3B5B43] text-white px-3 py-1 text-[0.7rem] font-semibold tracking-widest uppercase mb-5">Cleaning Practices</span>
+        <h1 class="font-['Playfair_Display'] text-5xl md:text-6xl text-white italic leading-tight mb-4">The Hidden Risk of<br>Cross-Contamination</h1>
+        <p class="text-white/85 text-xl font-light mb-5">Why Professional Cleaning Matters More Than You Think</p>
+        <div class="flex items-center text-white/60 text-xs tracking-widest uppercase gap-3">
+          <span>By NovaLuxe Team</span><span class="text-[#3B5B43]">•</span>
+          <span>5 min read</span><span class="text-[#3B5B43]">•</span>
+          <span>June 2026</span>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <img src="assets/images/services/detail.png" alt="Cleaning details" class="single-post-image">
+  <!-- Article -->
+  <article class="max-w-[750px] mx-auto px-6 py-20">
+    <p class="drop-cap text-[#4A5568] text-lg md:text-xl font-semibold leading-relaxed mb-10">
+      Most people associate a clean home with shiny floors and spotless countertops. However, true cleanliness goes far beyond appearances — it requires a systematic, professional approach that eliminates hidden risks most homeowners never consider.
+    </p>
+    <p class="text-[#4A5568] text-[1.1rem] leading-[1.9] mb-8">
+      One of the most common cleaning mistakes is cross-contamination — the transfer of bacteria, allergens, and dirt from one surface to another. This can happen when the same cloth, sponge, or cleaning tool is used throughout multiple areas of the home. For example, using a bathroom cloth to clean kitchen surfaces may spread germs instead of removing them.
+    </p>
 
-        <article class="single-post-content">
-            <p>Most people associate a clean home with shiny floors and spotless countertops. However, true cleanliness goes far beyond appearances.</p>
-            
-            <p>One of the most common cleaning mistakes is cross-contamination—the transfer of bacteria, allergens, and dirt from one surface to another. This can happen when the same cloth, sponge, or cleaning tool is used throughout multiple areas of the home.</p>
-            
-            <p>For example, using a bathroom cloth to clean kitchen surfaces may spread germs instead of removing them.</p>
-            
-            <h2>The Professional Approach</h2>
-            <p>Professional cleaning teams follow specific procedures to prevent this issue. Different tools are designated for different areas, products are selected carefully, and surfaces are cleaned in a strategic order to reduce contamination risks.</p>
-            
-            <p>This is especially important in homes with children, pets, seniors, or anyone with allergies and respiratory sensitivities.</p>
-            
-            <p>A home should not only look clean—it should be a healthy environment for everyone who lives there.</p>
-            
-            <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 3rem 0;">
-            
-            <h3>Additional Resource</h3>
-            <p>For more information about safe cleaning and disinfecting practices, visit the <a href="https://www.cdc.gov/hygiene/cleaning-disinfecting/index.html" target="_blank" rel="noopener noreferrer">CDC Guidelines on Cleaning and Disinfecting</a>.</p>
-        </article>
+    <h2 class="font-['Playfair_Display'] text-3xl text-[#2D3748] mb-6 mt-12 pl-6 border-l-4 border-[#3B5B43]">The Professional Approach</h2>
+    <p class="text-[#4A5568] text-[1.1rem] leading-[1.9] mb-8">
+      Professional cleaning teams follow specific procedures to prevent this issue. At NovaLuxe, we employ a rigorous color-coded system that strictly segregates cleaning materials by room type. Red cloths never leave the bathroom; blue materials are dedicated to glass and mirrored surfaces; deep green is reserved exclusively for living areas.
+    </p>
 
-        <div class="post-footer-nav">
-            <a href="blog.html" class="read-more-btn" style="border: none; background: #E2E8F0; color: #4A5568;">&larr; Back to Blog</a>
-            <a href="blog-post-2.html" class="read-more-btn">Next Article &rarr;</a>
-        </div>
+    <div class="my-12 bg-white border-l-[6px] border-[#3B5B43] p-10 italic text-2xl font-['Playfair_Display'] text-[#2D3748] leading-relaxed rounded-r-lg shadow-sm">
+      "True luxury is found in the peace of mind that comes from knowing every corner of your sanctuary is not just pristine, but biologically safe."
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-top">
-            <div class="footer-brand">
-                <div class="logo light">
-                    <span class="logo-icon">N</span>
-                    <div class="logo-text-wrapper">
-                        <span class="logo-text">NOVALUXE</span>
-                        <span class="logo-subtext">HOME CLEANING</span>
-                    </div>
-                </div>
-                <p>Elevating the standard of residential cleaning with professional, reliable, and luxury service.</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 NovaLuxe Home Cleaning. All rights reserved.</p>
-        </div>
-    </footer>
+    <p class="text-[#4A5568] text-[1.1rem] leading-[1.9] mb-8">
+      This is especially important in homes with children, pets, seniors, or anyone with allergies and respiratory sensitivities. A home should not only look clean — it should be a healthy environment for everyone who lives there.
+    </p>
 
-    <script src="js/script.js"></script>
+    <h2 class="font-['Playfair_Display'] text-3xl text-[#2D3748] mb-6 mt-12 pl-6 border-l-4 border-[#3B5B43]">A Holistic Approach to Health</h2>
+    <ul class="space-y-4 mb-8">
+      <li class="flex items-start gap-4"><span class="w-2 h-2 rounded-full bg-[#3B5B43] mt-2.5 flex-shrink-0"></span><span class="text-[#4A5568] text-[1.1rem] leading-[1.6]">Hospital-grade, eco-conscious disinfectants that are safe for pets and children.</span></li>
+      <li class="flex items-start gap-4"><span class="w-2 h-2 rounded-full bg-[#3B5B43] mt-2.5 flex-shrink-0"></span><span class="text-[#4A5568] text-[1.1rem] leading-[1.6]">Dedicated tools per room zone — never mixed or shared between areas.</span></li>
+      <li class="flex items-start gap-4"><span class="w-2 h-2 rounded-full bg-[#3B5B43] mt-2.5 flex-shrink-0"></span><span class="text-[#4A5568] text-[1.1rem] leading-[1.6]">Top-to-bottom, left-to-right protocol to prevent dust and allergen recirculation.</span></li>
+    </ul>
+
+    <div class="flex items-center justify-center py-14 opacity-25">
+      <div class="h-px w-24 bg-[#2D3748]"></div>
+      <div class="mx-4 rotate-45 border border-[#2D3748] p-1"><div class="w-1 h-1 bg-[#2D3748]"></div></div>
+      <div class="h-px w-24 bg-[#2D3748]"></div>
+    </div>
+
+    <p class="text-[#4A5568] text-[1.05rem] leading-[1.9] mb-4">
+      For more information about safe cleaning and disinfecting practices, visit the <a href="https://www.cdc.gov/hygiene/cleaning-disinfecting/index.html" target="_blank" rel="noopener noreferrer" class="text-[#3B5B43] underline decoration-[#3B5B43]/30 hover:decoration-[#3B5B43] transition-all">CDC Guidelines on Cleaning and Disinfecting</a>.
+    </p>
+  </article>
+
+  <!-- Post Nav -->
+  <div class="w-full border-y border-[#E2E8F0] bg-white/60">
+    <div class="max-w-7xl mx-auto px-8 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
+      <a class="group flex items-center text-[#4A5568] text-xs font-semibold tracking-widest uppercase hover:text-[#3B5B43] transition-colors gap-2" href="blog.html">
+        <span class="material-symbols-outlined group-hover:-translate-x-1 transition-transform">arrow_back</span> Back to Blog
+      </a>
+      <img src="assets/images/novaluxe-logo.png" alt="NovaLuxe" style="height:34px;width:auto;" class="opacity-30 hidden md:block"/>
+      <a class="group flex items-center bg-[#3B5B43] hover:bg-[#2d4533] text-white px-8 py-3 rounded-full text-xs font-semibold tracking-widest uppercase transition-all shadow-md gap-2" href="blog-post-2.html">
+        Next Article <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="bg-[#0d1f14] py-24 px-8 text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="font-['Playfair_Display'] text-4xl md:text-5xl text-white italic mb-6">Ready for a spotless home?</h2>
+      <p class="text-white/60 text-lg mb-10 font-light">Experience the NovaLuxe difference with a customized cleaning plan tailored to your residence.</p>
+      <a href="index.html#quote" class="inline-block bg-[#F5F0E8] hover:bg-white text-[#0d1f14] px-10 py-4 rounded-full text-xs font-bold tracking-widest uppercase transition-all duration-300">Request Free Quote</a>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-[#2d4533] border-t border-[#3B5B43]/20">
+  <div class="w-full px-8 py-12 flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-6">
+    <div>
+      <img src="assets/images/novaluxe-logo.png" alt="NovaLuxe" style="height:42px;width:auto;filter:brightness(0) invert(1); opacity:.85;"/>
+      <p class="text-[#F5F0E8]/60 text-sm mt-3">Luxury residential cleaning in the SF Bay Area.</p>
+      <a href="tel:+16502475945" class="inline-flex items-center gap-2 text-[#F5F0E8]/80 hover:text-[#F5F0E8] text-sm mt-3 transition-colors"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 11.5a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>(650) 247-5945</a>
+      <a href="mailto:contact@novaluxesc.com" class="inline-flex items-center gap-2 text-[#F5F0E8]/80 hover:text-[#F5F0E8] text-sm mt-1 block transition-colors"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>contact@novaluxesc.com</a>
+    </div>
+    <nav class="flex flex-wrap justify-center gap-8">
+      <a class="text-[#F5F0E8]/60 hover:text-[#F5F0E8] text-sm transition-colors" href="index.html#services">Services</a>
+      <a class="text-[#F5F0E8]/60 hover:text-[#F5F0E8] text-sm transition-colors" href="blog.html">Blog</a>
+      <a class="text-[#F5F0E8]/60 hover:text-[#F5F0E8] text-sm transition-colors" href="privacy.html">Privacy</a>
+      <a class="text-[#F5F0E8]/60 hover:text-[#F5F0E8] text-sm transition-colors" href="terms.html">Terms</a>
+    </nav>
+    <p class="text-[#F5F0E8]/40 text-xs">&copy; 2026 NovaLuxe Home Cleaning. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  let last = 0;
+  const hdr = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    const top = window.scrollY;
+    hdr.style.transform = top > last && top > 80 ? 'translateY(-100%)' : 'translateY(0)';
+    last = top;
+  });
+</script>
 </body>
 </html>

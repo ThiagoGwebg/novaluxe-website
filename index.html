@@ -1,263 +1,879 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NovaLuxe Home Cleaning</title>
-    <meta name="description" content="Luxury residential cleaning service for homes that deserve the best care.">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>NovaLuxe Home Cleaning | Luxury Residential Cleaning · Bay Area</title>
+<meta name="description" content="Luxury residential cleaning for Bay Area homes. Certified professionals, eco-friendly products, extraordinary results. Serving Palo Alto, San Mateo, Menlo Park & more."/>
+<link rel="icon" type="image/png" href="assets/images/favicon.png"/>
+<link rel="apple-touch-icon" href="assets/images/favicon.png"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: "#3B5B43",
+          primaryHover: "#2d4533",
+          cream: "#F5F0E8",
+          dark: "#2D3748",
+          muted: "#4A5568",
+          navDark: "#0d1f14"
+        },
+        fontFamily: {
+          display: ["Playfair Display","serif"],
+          body: ["Inter","sans-serif"]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body { background-color: #F5F0E8; font-family: 'Inter', sans-serif; color: #2D3748; }
+  .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24; vertical-align:middle; }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
+  .reveal { opacity:0; transform:translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+  .hero-kicker { animation: fadeUp 0.7s ease both; animation-delay: 0.1s; }
+  .hero-h1 { animation: fadeUp 0.7s ease both; animation-delay: 0.25s; }
+  .hero-sub { animation: fadeUp 0.7s ease both; animation-delay: 0.4s; }
+  .hero-btns { animation: fadeUp 0.7s ease both; animation-delay: 0.55s; }
+  .hero-trust { animation: fadeUp 0.7s ease both; animation-delay: 0.7s; }
+  .count-up { transition: none; }
+  .service-card-overlay { transition: opacity 0.4s ease; }
+  .group:hover .service-card-overlay { opacity: 0.75 !important; }
+  .group:hover .service-card-info { transform: translateY(0) !important; }
+  .service-card-info { transition: transform 0.4s ease; }
+  @keyframes scrollBounce { 0%,100%{transform:translateY(0);}50%{transform:translateY(6px);} }
+  .scroll-bounce { animation: scrollBounce 1.5s ease-in-out infinite; }
+  .city-tag:hover { background:#3B5B43; color:#fff; }
+  .process-line::before { content:''; position:absolute; top:50%; left:0; right:0; height:1px; background:linear-gradient(to right,transparent,#3B5B43,transparent); }
+</style>
 </head>
-<body>
-    <header class="navbar">
-        <div class="logo">
-            <span class="logo-icon">N</span>
-            <div class="logo-text-wrapper">
-                <span class="logo-text">NOVALUXE</span>
-                <span class="logo-subtext">HOME CLEANING</span>
-            </div>
-        </div>
-        <nav class="nav-links">
-            <a href="index.html#services">Services</a>
-            <a href="index.html#about">About Us</a>
-            <a href="index.html#area">Service Area</a>
-            <a href="blog.html">Blog</a>
-        </nav>
-        <a href="#quote" class="btn btn-primary">Request Quote</a>
-    </header>
+<body class="antialiased">
 
-    <section class="hero" id="home">
-        <div class="hero-bg" style="background-image: url('assets/images/hero/hero-bg.png');"></div>
-        <div class="hero-content">
-            <span class="hero-subtitle">SERVING BAY AREA</span>
-            <h1 class="hero-title">Where every home<br>shines with care</h1>
-            <p class="hero-desc">Luxury residential cleaning service for homes that deserve the best care. Certified professionals, eco-friendly products, extraordinary results.</p>
-            <div class="hero-buttons">
-                <a href="#quote" class="btn btn-light">Request Quote <span class="arrow">›</span></a>
-                <a href="#services" class="btn btn-outline">View Services</a>
-            </div>
-        </div>
-    </section>
+<!-- Navbar -->
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-[#0d1f14]" style="transition:transform 0.3s ease, box-shadow 0.3s ease;">
+  <div class="max-w-7xl mx-auto px-8 flex justify-between items-center" style="height:72px;">
+    <a href="index.html"><img src="assets/images/novaluxe-logo.png" alt="NovaLuxe" style="height:50px;width:auto;filter:brightness(0) invert(1);"/></a>
+    <nav class="hidden md:flex items-center gap-x-10">
+      <a class="text-gray-300 text-[0.75rem] tracking-widest uppercase hover:text-white transition-colors" href="#services">Services</a>
+      <a class="text-gray-300 text-[0.75rem] tracking-widest uppercase hover:text-white transition-colors" href="#about-us">About Us</a>
+      <a class="text-gray-300 text-[0.75rem] tracking-widest uppercase hover:text-white transition-colors" href="#area">Service Area</a>
+      <a class="text-gray-300 text-[0.75rem] tracking-widest uppercase hover:text-white transition-colors" href="blog.html">Blog</a>
+    </nav>
+    <a href="#quote" class="bg-[#3B5B43] hover:bg-[#2d4533] text-white px-5 py-2.5 rounded-full text-xs font-semibold tracking-widest uppercase transition-all">Request Quote</a>
+  </div>
+</header>
 
-    <div class="eco-strip">
-        <div class="eco-strip-content">
-            <span class="eco-icon">🌿</span>
-            <div class="eco-text">
-                <strong>100% Eco-Friendly Promise.</strong> 
-                <span>Safe for your family, safe for your pets, and kind to the environment.</span>
-            </div>
+<!-- Hero -->
+<section class="relative min-h-screen flex flex-col justify-center overflow-hidden" id="home">
+  <div class="absolute inset-0">
+    <img src="assets/images/hero/hero-bg.png" alt="Luxury home interior" class="w-full h-full object-cover"/>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
+  </div>
+  <div class="relative z-10 max-w-7xl mx-auto px-8 pt-32 pb-24 w-full">
+    <div class="max-w-3xl">
+      <p class="hero-kicker text-[#3B5B43] text-[0.7rem] font-semibold tracking-[5px] uppercase mb-6">Serving the SF Bay Area</p>
+      <h1 class="hero-h1 font-['Playfair_Display'] text-6xl md:text-7xl lg:text-8xl text-white italic leading-[1.05] mb-7">
+        Where every<br>home shines<br>with care.
+      </h1>
+      <p class="hero-sub text-white/70 text-lg md:text-xl font-light leading-relaxed mb-10 max-w-xl">
+        Luxury residential cleaning for homes that deserve the best care. Certified professionals, eco-friendly products, extraordinary results.
+      </p>
+      <div class="hero-btns flex flex-wrap gap-4 mb-12">
+        <a href="#quote" class="bg-[#3B5B43] hover:bg-[#2d4533] text-white px-8 py-4 rounded-full text-sm font-semibold tracking-widest uppercase transition-all duration-300 shadow-lg">Request Free Quote</a>
+        <a href="#services" class="border border-white/40 hover:border-white/80 text-white px-8 py-4 rounded-full text-sm font-semibold tracking-widest uppercase transition-all duration-300">View Services</a>
+      </div>
+      <div class="hero-trust flex items-center gap-4">
+        <div class="flex -space-x-1">
+          <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
         </div>
+        <span class="text-white/60 text-sm"><strong class="text-white font-semibold">5.0</strong> rating &middot; Trusted by <strong class="text-white font-semibold">500+</strong> Bay Area homes</span>
+      </div>
+    </div>
+  </div>
+  <a href="#services" class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 hover:text-white/70 transition-colors scroll-bounce">
+    <span class="material-symbols-outlined text-2xl">keyboard_arrow_down</span>
+    <span class="text-[0.65rem] tracking-widest uppercase">Scroll</span>
+  </a>
+</section>
+
+<!-- Eco Strip -->
+<div class="bg-[#0d1f14] py-4">
+  <div class="max-w-7xl mx-auto px-8 flex items-center justify-center gap-4">
+    <svg class="w-5 h-5 text-[#3B5B43] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20C4 12 9 5 20 4c0 11-7 16-15 16z"/><path d="M9 15c3-3 6-4 9-5"/></svg>
+    <p class="text-white/70 text-sm"><strong class="text-white">100% Eco-Friendly Promise.</strong> Safe for your family, safe for your pets, and kind to the environment.</p>
+  </div>
+</div>
+
+<!-- Services -->
+<section class="py-24 px-8" id="services">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal mb-16">
+      <span class="text-[#3B5B43] text-[0.7rem] font-semibold tracking-[4px] uppercase block mb-4">Our Services</span>
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <h2 class="font-['Playfair_Display'] text-5xl md:text-6xl text-[#2D3748] italic leading-tight">Luxury cleaning,<br>tailored to you.</h2>
+        <p class="text-[#4A5568] text-lg font-light max-w-sm leading-relaxed">Each service is designed to exceed your expectations, with attention to detail only NovaLuxe can offer.</p>
+      </div>
     </div>
 
+    <!-- Service Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 reveal">
+      <!-- Large card -->
+      <div class="group relative md:col-span-2 md:row-span-2 h-[420px] md:h-auto overflow-hidden rounded-xl cursor-pointer">
+        <img src="assets/images/services/kitchen.png" alt="Standard Cleaning" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700"/>
+        <div class="service-card-overlay absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent opacity-60"></div>
+        <div class="service-card-info absolute bottom-0 left-0 p-8 translate-y-2">
+          <span class="text-[#3B5B43] text-[0.65rem] font-bold tracking-[3px] uppercase block mb-3">01</span>
+          <h3 class="font-['Playfair_Display'] text-3xl text-white italic mb-3">Standard Cleaning</h3>
+          <p class="text-white/70 text-sm leading-relaxed max-w-xs">We keep your home spotless with every visit. Surfaces, floors, bathrooms and kitchen — all with the attention it deserves.</p>
+        </div>
+      </div>
 
-    <section class="services-intro" id="services">
-        <div class="services-intro-content">
-            <h2 class="section-title">Luxury cleaning,<br>tailored to you.</h2>
-            <p class="section-desc">Each service is designed to exceed your expectations, with the attention to detail that only NovaLuxe can offer.</p>
-            <a href="#all-services" class="link-btn">View all services <span class="arrow">›</span></a>
+      <div class="group relative h-[200px] overflow-hidden rounded-xl cursor-pointer">
+        <img src="assets/images/services/bathroom.png" alt="Deep Cleaning" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700"/>
+        <div class="service-card-overlay absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-50"></div>
+        <div class="service-card-info absolute bottom-0 left-0 p-6 translate-y-1">
+          <span class="text-[#3B5B43] text-[0.6rem] font-bold tracking-[3px] uppercase block mb-2">02</span>
+          <h3 class="font-['Playfair_Display'] text-xl text-white italic">Deep Cleaning</h3>
+          <p class="text-white/60 text-xs mt-1">An exhaustive clean that reaches every corner.</p>
         </div>
-    </section>
+      </div>
 
-    <section class="services-grid">
-        <div class="service-card large">
-            <div class="service-bg" style="background-image: url('assets/images/services/kitchen.png');"></div>
-            <div class="service-overlay"></div>
-            <div class="service-info">
-                <span class="service-num">01</span>
-                <h3>Standard Cleaning</h3>
-                <p>We keep your home spotless with every visit. Surfaces, floors, bathrooms and kitchen — all with the attention it deserves.</p>
-            </div>
+      <div class="group relative h-[200px] overflow-hidden rounded-xl cursor-pointer">
+        <img src="assets/images/services/empty-room.png" alt="Move In/Out" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700"/>
+        <div class="service-card-overlay absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-50"></div>
+        <div class="service-card-info absolute bottom-0 left-0 p-6 translate-y-1">
+          <span class="text-[#3B5B43] text-[0.6rem] font-bold tracking-[3px] uppercase block mb-2">03</span>
+          <h3 class="font-['Playfair_Display'] text-xl text-white italic">Move In / Move Out</h3>
+          <p class="text-white/60 text-xs mt-1">Leave your home ready for the next chapter.</p>
         </div>
+      </div>
+    </div>
 
-        <div class="service-card small">
-            <div class="service-bg" style="background-image: url('assets/images/services/bathroom.png');"></div>
-            <div class="service-overlay"></div>
-            <div class="service-info">
-                <span class="service-num">02</span>
-                <h3>Deep Cleaning</h3>
-                <p>An exhaustive clean that reaches every corner.</p>
-            </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 reveal">
+      <div class="group relative h-[200px] overflow-hidden rounded-xl cursor-pointer">
+        <img src="assets/images/services/living-room.png" alt="Recurring Cleaning" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700"/>
+        <div class="service-card-overlay absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-50"></div>
+        <div class="service-card-info absolute bottom-0 left-0 p-6 translate-y-1">
+          <span class="text-[#3B5B43] text-[0.6rem] font-bold tracking-[3px] uppercase block mb-2">04</span>
+          <h3 class="font-['Playfair_Display'] text-xl text-white italic">Recurring Cleaning</h3>
+          <p class="text-white/60 text-xs mt-1">Weekly, bi-weekly or monthly — always impeccable.</p>
         </div>
+      </div>
+      <div class="group relative h-[200px] overflow-hidden rounded-xl cursor-pointer">
+        <img src="assets/images/services/detail.png" alt="Personalized Services" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700"/>
+        <div class="service-card-overlay absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-50"></div>
+        <div class="service-card-info absolute bottom-0 left-0 p-6 translate-y-1">
+          <span class="text-[#3B5B43] text-[0.6rem] font-bold tracking-[3px] uppercase block mb-2">05</span>
+          <h3 class="font-['Playfair_Display'] text-xl text-white italic">Personalized Services</h3>
+          <p class="text-white/60 text-xs mt-1">A tailored plan designed exactly for your needs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="service-card small">
-            <div class="service-bg" style="background-image: url('assets/images/services/empty-room.png');"></div>
-            <div class="service-overlay"></div>
-            <div class="service-info">
-                <span class="service-num">03</span>
-                <h3>Move In / Move Out</h3>
-                <p>Leave your home ready for the next chapter.</p>
-            </div>
+<!-- Why Us -->
+<section class="py-24 px-8 bg-white/40" id="why-us">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <div class="relative reveal">
+      <div class="aspect-[4/5] rounded-2xl overflow-hidden">
+        <img src="assets/images/about/why-us.png" alt="NovaLuxe professional cleaning" class="w-full h-full object-cover"/>
+      </div>
+      <div class="absolute -bottom-6 -right-6 bg-[#0d1f14] text-white rounded-2xl p-6 shadow-2xl">
+        <span class="font-['Playfair_Display'] text-4xl font-bold text-[#3B5B43] block">500+</span>
+        <span class="text-white/60 text-xs tracking-widest uppercase mt-1 block">Satisfied Homes</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <span class="text-[#3B5B43] text-[0.7rem] font-semibold tracking-[4px] uppercase block mb-4">Why NovaLuxe</span>
+      <h2 class="font-['Playfair_Display'] text-5xl text-[#2D3748] italic leading-tight mb-10">The highest standard<br>in every detail.</h2>
+      <div class="space-y-8">
+        <div class="flex gap-5">
+          <div class="w-10 h-10 rounded-full bg-[#3B5B43]/10 flex items-center justify-center flex-shrink-0 mt-1">
+            <svg class="w-5 h-5 text-[#3B5B43]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-[#2D3748] mb-1">Certified Professionals</h4>
+            <p class="text-[#4A5568] text-sm leading-relaxed">Our team goes through a rigorous selection and training process. Trust and discretion in every visit.</p>
+          </div>
         </div>
+        <div class="flex gap-5">
+          <div class="w-10 h-10 rounded-full bg-[#3B5B43]/10 flex items-center justify-center flex-shrink-0 mt-1">
+            <svg class="w-5 h-5 text-[#3B5B43]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20C4 12 9 5 20 4c0 11-7 16-15 16z"/><path d="M9 15c3-3 6-4 9-5"/></svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-[#2D3748] mb-1">Eco-Friendly Products</h4>
+            <p class="text-[#4A5568] text-sm leading-relaxed">We exclusively use certified cleaning products, safe for your family, pets, and the environment.</p>
+          </div>
+        </div>
+        <div class="flex gap-5">
+          <div class="w-10 h-10 rounded-full bg-[#3B5B43]/10 flex items-center justify-center flex-shrink-0 mt-1">
+            <svg class="w-5 h-5 text-[#3B5B43]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9 6.8 19.1l1-5.8L3.5 9.2l5.9-.9L12 3z"/></svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-[#2D3748] mb-1">Satisfaction Guaranteed</h4>
+            <p class="text-[#4A5568] text-sm leading-relaxed">If something doesn't meet your expectations, we'll return at no additional cost. Your satisfaction is our priority.</p>
+          </div>
+        </div>
+      </div>
+      <a href="#quote" class="inline-block mt-10 bg-[#3B5B43] hover:bg-[#2d4533] text-white px-8 py-4 rounded-full text-xs font-semibold tracking-widest uppercase transition-all duration-300 shadow-md">Request Quote</a>
+    </div>
+  </div>
+</section>
 
-        <div class="service-card small">
-            <div class="service-bg" style="background-image: url('assets/images/services/living-room.png');"></div>
-            <div class="service-overlay"></div>
-            <div class="service-info">
-                <span class="service-num">04</span>
-                <h3>Recurring Cleaning</h3>
-                <p>Weekly, bi-weekly or monthly — always impeccable.</p>
-            </div>
-        </div>
+<!-- About Us -->
+<section class="py-24 px-8" id="about-us">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal mb-16 max-w-2xl">
+      <span class="text-[#3B5B43] text-[0.7rem] font-semibold tracking-[4px] uppercase block mb-4">About Us</span>
+      <h2 class="font-['Playfair_Display'] text-5xl text-[#2D3748] italic leading-tight">Excellence, Care, and Trust<br>in Every Home.</h2>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 reveal">
+      <div class="space-y-5 text-[#4A5568] text-[1.05rem] leading-[1.85]">
+        <p>NovaLuxe was founded with a simple mission: to provide more than exceptional cleaning services. We strive to bring peace of mind, trust, and thoughtful care to every home we serve.</p>
+        <p>We are a family-owned, locally operated business founded by a couple of immigrants who chose to build their future in Northern California. We believe every home has its own rhythm, personality, and unique needs. That's why every service we provide is tailored with attention to detail and genuine care.</p>
+      </div>
+      <div class="space-y-5 text-[#4A5568] text-[1.05rem] leading-[1.85]">
+        <p>Our philosophy is simple: as a service company, our job is to solve problems — not create them. Every visit should leave your home more organized, more comfortable, and give you more time to focus on what matters most.</p>
+        <p>We believe in growing with purpose. For us, quality will always come before quantity. The success of NovaLuxe is not measured by the number of homes we clean, but by the trust we earn in every home we enter.</p>
+        <p>Being welcomed into someone's home is a privilege. That's why we approach every visit with respect, discretion, professionalism, and an unwavering commitment to excellence.</p>
+      </div>
+    </div>
+    <p class="reveal mt-12 text-[#3B5B43] font-['Playfair_Display'] text-xl italic border-t border-[#3B5B43]/20 pt-8">NovaLuxe — Excellence, Care, and Trust in Every Home.</p>
+  </div>
+</section>
 
-        <div class="service-card horizontal">
-            <div class="service-bg" style="background-image: url('assets/images/services/detail.png');"></div>
-            <div class="service-overlay"></div>
-            <div class="service-info">
-                <span class="service-num">05</span>
-                <h3>Personalized Services</h3>
-                <p>Every home is unique. We design a cleaning plan tailored exactly to your needs and lifestyle.</p>
-            </div>
-        </div>
-    </section>
-    <section class="why-us" id="about">
-        <div class="why-us-image">
-            <div class="why-us-bg" style="background-image: url('assets/images/about/why-us.png');"></div>
-            <div class="satisfaction-badge">
-                <strong>500+</strong>
-                <span>Satisfied homes</span>
-            </div>
-        </div>
-        <div class="why-us-content">
-            <span class="section-subtitle">WHY NOVALUXE</span>
-            <h2 class="section-title">The highest standard<br>in every detail.</h2>
-            
-            <div class="feature-list">
-                <div class="feature-item">
-                    <div class="feature-icon">🛡️</div>
-                    <div class="feature-text">
-                        <h4>Certified Professionals</h4>
-                        <p>Our team goes through a rigorous selection and training process. Trust and discretion in every visit.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🌿</div>
-                    <div class="feature-text">
-                        <h4>Eco-Friendly Products</h4>
-                        <p>We exclusively use certified cleaning products, safe for your family, pets, and the environment.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">⭐</div>
-                    <div class="feature-text">
-                        <h4>Satisfaction Guaranteed</h4>
-                        <p>If something doesn't meet your expectations, we'll return at no additional cost. Your satisfaction is our priority.</p>
-                    </div>
-                </div>
-            </div>
-            <a href="#quote" class="btn btn-primary">Request Quote <span class="arrow">›</span></a>
-        </div>
-    </section>
+<!-- Stats Band -->
+<section class="bg-[#0d1f14] py-20 px-8">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 reveal">
+    <div class="text-center">
+      <span class="font-['Playfair_Display'] text-5xl md:text-6xl text-[#3B5B43] italic font-bold block" data-count="500" data-suffix="+">0</span>
+      <span class="text-white/50 text-sm tracking-widest uppercase mt-2 block">Homes Cleaned</span>
+    </div>
+    <div class="text-center">
+      <span class="font-['Playfair_Display'] text-5xl md:text-6xl text-[#3B5B43] italic font-bold block" data-count="15" data-suffix="+">0</span>
+      <span class="text-white/50 text-sm tracking-widest uppercase mt-2 block">Cities Served</span>
+    </div>
+    <div class="text-center">
+      <span class="font-['Playfair_Display'] text-5xl md:text-6xl text-[#3B5B43] italic font-bold block" data-count="98" data-suffix="%">0</span>
+      <span class="text-white/50 text-sm tracking-widest uppercase mt-2 block">Client Satisfaction</span>
+    </div>
+    <div class="text-center">
+      <span class="font-['Playfair_Display'] text-5xl md:text-6xl text-[#3B5B43] italic font-bold block" data-count="100" data-suffix="%">0</span>
+      <span class="text-white/50 text-sm tracking-widest uppercase mt-2 block">Eco-Friendly</span>
+    </div>
+  </div>
+</section>
 
-    <section class="testimonials">
-        <div class="testimonials-header">
-            <span class="section-subtitle center">TESTIMONIALS</span>
-            <h2 class="section-title center">What our clients say.</h2>
+<!-- How It Works -->
+<section class="py-24 px-8 bg-white/40" id="process">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal text-center mb-20">
+      <span class="text-[#3B5B43] text-[0.7rem] font-semibold tracking-[4px] uppercase block mb-4">How It Works</span>
+      <h2 class="font-['Playfair_Display'] text-5xl text-[#2D3748] italic">Effortless from start to shine.</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 reveal">
+      <div class="text-center">
+        <div class="relative inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#F5F0E8] border border-[#3B5B43]/20 mb-6">
+          <svg class="w-8 h-8 text-[#3B5B43]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>
+          <span class="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-[#3B5B43] text-white text-xs font-bold flex items-center justify-center">1</span>
         </div>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="quote-icon">"</div>
-                <p>"NovaLuxe completely transformed my home. The level of detail and care is incomparable. After every visit, it feels like a brand new house."</p>
-                <div class="testimonial-author">
-                    <strong>Sofia M.</strong>
-                    <span>Palo Alto, CA</span>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="quote-icon">"</div>
-                <p>"We've been using their recurring service for over a year and they have never disappointed us. They are professional, punctual, and absolutely reliable."</p>
-                <div class="testimonial-author">
-                    <strong>Carlos & Ana R.</strong>
-                    <span>San Mateo, CA</span>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="quote-icon">"</div>
-                <p>"We hired the move-out cleaning service and were impressed. The apartment looked better than when we first got it."</p>
-                <div class="testimonial-author">
-                    <strong>Michelle T.</strong>
-                    <span>Menlo Park, CA</span>
-                </div>
-            </div>
+        <h4 class="font-['Playfair_Display'] text-2xl text-[#2D3748] italic mb-3">Book in minutes</h4>
+        <p class="text-[#4A5568] text-sm leading-relaxed">Request your free quote and pick a date that fits your schedule. No commitments.</p>
+      </div>
+      <div class="text-center">
+        <div class="relative inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#F5F0E8] border border-[#3B5B43]/20 mb-6">
+          <svg class="w-8 h-8 text-[#3B5B43]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z"/><path d="M19 14.5l.6 1.9 1.9.6-1.9.6-.6 1.9-.6-1.9-1.9-.6 1.9-.6.6-1.9z"/></svg>
+          <span class="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-[#3B5B43] text-white text-xs font-bold flex items-center justify-center">2</span>
         </div>
-    </section>
+        <h4 class="font-['Playfair_Display'] text-2xl text-[#2D3748] italic mb-3">We make it shine</h4>
+        <p class="text-[#4A5568] text-sm leading-relaxed">Certified professionals arrive on time with eco-friendly products and a tailored plan.</p>
+      </div>
+      <div class="text-center">
+        <div class="relative inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#F5F0E8] border border-[#3B5B43]/20 mb-6">
+          <svg class="w-8 h-8 text-[#3B5B43]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-6 8 6"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/></svg>
+          <span class="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-[#3B5B43] text-white text-xs font-bold flex items-center justify-center">3</span>
+        </div>
+        <h4 class="font-['Playfair_Display'] text-2xl text-[#2D3748] italic mb-3">Relax &amp; enjoy</h4>
+        <p class="text-[#4A5568] text-sm leading-relaxed">Come home to a spotless space. Not perfect? We return at no extra cost — guaranteed.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="service-area" id="area">
-        <div class="area-header">
-            <span class="section-subtitle center">SERVICE AREA</span>
-            <h2 class="section-title center">Serving the entire Bay Area.</h2>
+<!-- Reviews -->
+<section class="py-24 px-8" id="reviews">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal text-center mb-5">
+      <span class="text-[#3B5B43] text-[0.7rem] font-semibold tracking-[4px] uppercase block mb-4">Reviews</span>
+      <h2 class="font-['Playfair_Display'] text-5xl text-[#2D3748] italic mb-6">What our clients say.</h2>
+      <div class="flex items-center justify-center gap-2">
+        <div class="flex">
+          <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
         </div>
-        <div class="cities-grid">
-            <span class="city-tag">San Mateo</span>
-            <span class="city-tag">Palo Alto</span>
-            <span class="city-tag">Menlo Park</span>
-            <span class="city-tag">Redwood City</span>
-            <span class="city-tag">Burlingame</span>
-            <span class="city-tag">San Francisco</span>
-            <span class="city-tag">Los Altos</span>
-            <span class="city-tag">Atherton</span>
-            <span class="city-tag">Hillsborough</span>
-            <span class="city-tag">Foster City</span>
-            <span class="city-tag">Belmont</span>
-            <span class="city-tag">San Carlos</span>
-        </div>
-    </section>
+        <span class="text-[#4A5568] text-sm"><strong class="text-[#2D3748]">5.0</strong> average on
+          <a href="https://www.thumbtack.com/instant-results/?query=NovaLuxe%20HomeCleaning" target="_blank" rel="noopener" class="text-[#009FD9] font-semibold hover:underline">Thumbtack</a> &amp;
+          <a href="https://nextdoor.com" target="_blank" rel="noopener" class="text-[#00B246] font-semibold hover:underline">Nextdoor</a>
+        </span>
+      </div>
+    </div>
 
-    <section class="cta" id="quote">
-        <span class="section-subtitle center light">START TODAY</span>
-        <h2 class="section-title center light">Your home deserves to shine.</h2>
-        <p class="cta-desc">Request your free quote today. No commitments, no surprises — just extraordinary results.</p>
-        <a href="#" class="btn btn-white">Request Free Quote <span class="arrow">›</span></a>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-top">
-            <div class="footer-brand">
-                <div class="logo light">
-                    <span class="logo-icon">N</span>
-                    <div class="logo-text-wrapper">
-                        <span class="logo-text">NOVALUXE</span>
-                        <span class="logo-subtext">HOME CLEANING</span>
-                    </div>
-                </div>
-                <p>Luxury residential cleaning service in the San Francisco Bay Area. Every home shines with the care it deserves.</p>
-                <span class="eco-badge">🌿 Certified eco-friendly products</span>
-            </div>
-            <div class="footer-links">
-                <div class="footer-col">
-                    <h4>SERVICES</h4>
-                    <ul>
-                        <li><a href="#services">Standard Cleaning</a></li>
-                        <li><a href="#services">Deep Cleaning</a></li>
-                        <li><a href="#services">Move In/Out</a></li>
-                        <li><a href="#services">Recurring Cleaning</a></li>
-                        <li><a href="#services">Personalized Services</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>SERVICE AREA</h4>
-                    <p class="location-pin">📍 San Francisco Bay Area, California</p>
-                    <ul class="footer-cities">
-                        <li>San Mateo</li>
-                        <li>Palo Alto</li>
-                        <li>Menlo Park</li>
-                        <li>Redwood City</li>
-                        <li>Burlingame</li>
-                        <li>San Francisco</li>
-                        <li>Los Altos</li>
-                        <li>Atherton</li>
-                    </ul>
-                </div>
-            </div>
+    <div id="reviews-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 reveal">
+      <!-- Review Card 1 -->
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#E2E8F0] relative">
+        <span class="font-['Playfair_Display'] text-6xl text-[#3B5B43]/20 absolute top-4 left-6 leading-none">"</span>
+        <div class="inline-flex items-center gap-1.5 bg-[#009FD9]/10 text-[#009FD9] text-[0.65rem] font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="10" height="10"><path d="M12 2a5 5 0 015 5c0 3.5-5 11-5 11S7 10.5 7 7a5 5 0 015-5zm0 3a2 2 0 100 4 2 2 0 000-4z"/></svg>
+          Thumbtack
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 NovaLuxe Home Cleaning. All rights reserved.</p>
-            <div class="footer-legal">
-                <a href="#">Privacy</a>
-                <a href="#">Terms</a>
-            </div>
+        <div class="flex mb-4">
+          <svg class="w-3.5 h-3.5 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+          <svg class="w-3.5 h-3.5 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+          <svg class="w-3.5 h-3.5 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+          <svg class="w-3.5 h-3.5 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+          <svg class="w-3.5 h-3.5 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
         </div>
-    </footer>
+        <p class="text-[#4A5568] text-sm leading-relaxed mb-6">"NovaLuxe completely transformed my home. The level of detail and care is incomparable. After every visit, it feels like a brand new house."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-[#3B5B43] text-white text-xs font-bold flex items-center justify-center flex-shrink-0">SM</div>
+          <div>
+            <strong class="text-[#2D3748] text-sm block">Sofia M.</strong>
+            <span class="text-[#4A5568] text-xs">Palo Alto, CA</span>
+          </div>
+        </div>
+      </div>
 
-    <script src="js/script.js"></script>
+      <!-- Review Card 2 -->
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#E2E8F0] relative">
+        <span class="font-['Playfair_Display'] text-6xl text-[#3B5B43]/20 absolute top-4 left-6 leading-none">"</span>
+        <div class="inline-flex items-center gap-1.5 bg-[#00B246]/10 text-[#00B246] text-[0.65rem] font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="10" height="10"><path d="M4 11l8-6 8 6v9H4v-9zm4 9h8v-6H8v6zm4-10a1 1 0 100 2 1 1 0 000-2z"/></svg>
+          Nextdoor
+        </div>
+        <div class="flex mb-4">
+          <svg class="w-3.5 h-3.5 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+          <svg class="w-3.5 h-3.5 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+          <svg class="w-3.5 h-3.5 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+          <svg class="w-3.5 h-3.5 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+          <svg class="w-3.5 h-3.5 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+        </div>
+        <p class="text-[#4A5568] text-sm leading-relaxed mb-6">"We've been using their recurring service for over a year and they have never disappointed us. Professional, punctual, and absolutely reliable."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-[#3B5B43] text-white text-xs font-bold flex items-center justify-center flex-shrink-0">CA</div>
+          <div>
+            <strong class="text-[#2D3748] text-sm block">Carlos &amp; Ana R.</strong>
+            <span class="text-[#4A5568] text-xs">San Mateo, CA</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review Card 3 -->
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#E2E8F0] relative">
+        <span class="font-['Playfair_Display'] text-6xl text-[#3B5B43]/20 absolute top-4 left-6 leading-none">"</span>
+        <div class="inline-flex items-center gap-1.5 bg-[#009FD9]/10 text-[#009FD9] text-[0.65rem] font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="10" height="10"><path d="M12 2a5 5 0 015 5c0 3.5-5 11-5 11S7 10.5 7 7a5 5 0 015-5zm0 3a2 2 0 100 4 2 2 0 000-4z"/></svg>
+          Thumbtack
+        </div>
+        <div class="flex mb-4">
+          <svg class="w-3.5 h-3.5 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+          <svg class="w-3.5 h-3.5 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+          <svg class="w-3.5 h-3.5 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+          <svg class="w-3.5 h-3.5 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+          <svg class="w-3.5 h-3.5 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+        </div>
+        <p class="text-[#4A5568] text-sm leading-relaxed mb-6">"We hired the move-out cleaning service and were impressed. The apartment looked better than when we first got it. Highly recommend!"</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-[#3B5B43] text-white text-xs font-bold flex items-center justify-center flex-shrink-0">MT</div>
+          <div>
+            <strong class="text-[#2D3748] text-sm block">Michelle T.</strong>
+            <span class="text-[#4A5568] text-xs">Menlo Park, CA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Leave a Review -->
+    <div class="mt-12 bg-white rounded-2xl border border-[#E2E8F0] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 reveal shadow-sm">
+      <div>
+        <h3 class="font-['Playfair_Display'] text-2xl text-[#2D3748] italic mb-2">Happy with our service?</h3>
+        <p class="text-[#4A5568] text-sm mb-4">Your review helps other families in the Bay Area find trusted, quality cleaning.</p>
+        <div class="flex items-center gap-1.5 cursor-pointer group" onclick="openReviewModal('Direct Review', 5)" title="Click to rate 5 stars">
+          <span class="text-xs text-[#718096] uppercase tracking-widest mr-2 font-semibold group-hover:text-[#3B5B43] transition-colors">Rate your experience:</span>
+          <div class="flex items-center text-amber-400">
+            <svg class="w-5 h-5 hover:scale-125 transition-transform" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+            <svg class="w-5 h-5 hover:scale-125 transition-transform" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+            <svg class="w-5 h-5 hover:scale-125 transition-transform" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+            <svg class="w-5 h-5 hover:scale-125 transition-transform" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+            <svg class="w-5 h-5 hover:scale-125 transition-transform" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+          </div>
+          <span class="text-xs text-[#3B5B43] font-bold ml-2 underline">Write a Review</span>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row flex-wrap gap-3 flex-shrink-0">
+        <button type="button" onclick="openReviewModal('Direct Review', 5)" class="flex items-center justify-center gap-2 bg-[#3B5B43] hover:bg-[#2d4533] text-white px-6 py-3 rounded-full text-xs font-bold tracking-widest uppercase transition-all shadow-md">
+          <svg class="w-3.5 h-3.5 text-amber-300" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+          Leave a Review
+        </button>
+        <button type="button" onclick="openReviewModal('Thumbtack', 5)" class="flex items-center justify-center gap-2 bg-[#009FD9] hover:bg-[#0088ba] text-white px-6 py-3 rounded-full text-xs font-bold tracking-widest uppercase transition-all shadow-md">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 2a5 5 0 015 5c0 3.5-5 11-5 11S7 10.5 7 7a5 5 0 015-5zm0 3a2 2 0 100 4 2 2 0 000-4z"/></svg>
+          Review on Thumbtack
+        </button>
+        <button type="button" onclick="openReviewModal('Nextdoor', 5)" class="flex items-center justify-center gap-2 bg-[#00B246] hover:bg-[#009a3c] text-white px-6 py-3 rounded-full text-xs font-bold tracking-widest uppercase transition-all shadow-md">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M4 11l8-6 8 6v9H4v-9zm4 9h8v-6H8v6zm4-10a1 1 0 100 2 1 1 0 000-2z"/></svg>
+          Recommend on Nextdoor
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Service Area -->
+<section class="py-24 px-8 bg-white/40" id="area">
+  <div class="max-w-7xl mx-auto text-center reveal">
+    <span class="text-[#3B5B43] text-[0.7rem] font-semibold tracking-[4px] uppercase block mb-4">Service Area</span>
+    <h2 class="font-['Playfair_Display'] text-5xl text-[#2D3748] italic mb-14">Serving the entire Bay Area.</h2>
+    <div class="flex flex-wrap justify-center gap-3">
+      <span class="city-tag inline-block border border-[#3B5B43]/30 text-[#4A5568] px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 cursor-default">San Mateo</span>
+      <span class="city-tag inline-block border border-[#3B5B43]/30 text-[#4A5568] px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 cursor-default">Palo Alto</span>
+      <span class="city-tag inline-block border border-[#3B5B43]/30 text-[#4A5568] px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 cursor-default">Menlo Park</span>
+      <span class="city-tag inline-block border border-[#3B5B43]/30 text-[#4A5568] px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 cursor-default">Redwood City</span>
+      <span class="city-tag inline-block border border-[#3B5B43]/30 text-[#4A5568] px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 cursor-default">Burlingame</span>
+      <span class="city-tag inline-block border border-[#3B5B43]/30 text-[#4A5568] px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 cursor-default">San Francisco</span>
+      <span class="city-tag inline-block border border-[#3B5B43]/30 text-[#4A5568] px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 cursor-default">Los Altos</span>
+      <span class="city-tag inline-block border border-[#3B5B43]/30 text-[#4A5568] px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 cursor-default">Atherton</span>
+      <span class="city-tag inline-block border border-[#3B5B43]/30 text-[#4A5568] px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 cursor-default">Hillsborough</span>
+      <span class="city-tag inline-block border border-[#3B5B43]/30 text-[#4A5568] px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 cursor-default">Foster City</span>
+      <span class="city-tag inline-block border border-[#3B5B43]/30 text-[#4A5568] px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 cursor-default">Belmont</span>
+      <span class="city-tag inline-block border border-[#3B5B43]/30 text-[#4A5568] px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 cursor-default">San Carlos</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-[#0d1f14] py-32 px-8 relative overflow-hidden" id="quote">
+  <div class="absolute inset-0 opacity-5">
+    <img src="assets/images/hero/hero-bg.png" alt="" class="w-full h-full object-cover"/>
+  </div>
+  <div class="relative max-w-3xl mx-auto text-center reveal">
+    <span class="text-[#3B5B43] text-[0.7rem] font-semibold tracking-[4px] uppercase block mb-6">Start Today</span>
+    <h2 class="font-['Playfair_Display'] text-5xl md:text-6xl text-white italic leading-tight mb-6">Your home deserves<br>to shine.</h2>
+    <p class="text-white/60 text-lg font-light mb-12">Request your free quote today. No commitments, no surprises — just extraordinary results.</p>
+    <a href="mailto:contact@novaluxesc.com" class="inline-block bg-[#F5F0E8] hover:bg-white text-[#0d1f14] px-12 py-5 rounded-full text-sm font-bold tracking-widest uppercase transition-all duration-300 shadow-xl">Request Free Quote</a>
+    <p class="text-white/60 text-base mt-8">Prefer to call or email? <a href="tel:+16502475945" class="text-white font-semibold hover:text-[#F5F0E8] transition-colors border-b border-white/30 hover:border-white pb-0.5 whitespace-nowrap">(650) 247-5945</a> &middot; <a href="mailto:contact@novaluxesc.com" class="text-white font-semibold hover:text-[#F5F0E8] transition-colors border-b border-white/30 hover:border-white pb-0.5 whitespace-nowrap">contact@novaluxesc.com</a></p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#2d4533]">
+  <div class="max-w-7xl mx-auto px-8 pt-16 pb-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-white/10">
+      <div>
+        <img src="assets/images/novaluxe-logo.png" alt="NovaLuxe" style="height:46px;width:auto;filter:brightness(0) invert(1); opacity:.85;" class="mb-4"/>
+        <p class="text-white/50 text-sm leading-relaxed mb-4">Luxury residential cleaning service in the San Francisco Bay Area. Every home shines with the care it deserves.</p>
+        <div class="flex items-center gap-2 text-white/40 text-xs">
+          <svg class="w-4 h-4 text-[#3B5B43]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20C4 12 9 5 20 4c0 11-7 16-15 16z"/><path d="M9 15c3-3 6-4 9-5"/></svg>
+          Certified eco-friendly products
+        </div>
+        <a href="tel:+16502475945" class="flex items-center gap-2 text-white/70 hover:text-white text-sm mt-4 transition-colors">
+          <svg class="w-4 h-4 text-[#3B5B43]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 11.5a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+          (650) 247-5945
+        </a>
+        <a href="mailto:contact@novaluxesc.com" class="flex items-center gap-2 text-white/70 hover:text-white text-sm mt-2 transition-colors">
+          <svg class="w-4 h-4 text-[#3B5B43]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          contact@novaluxesc.com
+        </a>
+      </div>
+      <div>
+        <h4 class="text-white/80 text-[0.7rem] font-semibold tracking-[3px] uppercase mb-5">Services</h4>
+        <ul class="space-y-2.5">
+          <li><a href="#services" class="text-white/50 hover:text-white text-sm transition-colors">Standard Cleaning</a></li>
+          <li><a href="#services" class="text-white/50 hover:text-white text-sm transition-colors">Deep Cleaning</a></li>
+          <li><a href="#services" class="text-white/50 hover:text-white text-sm transition-colors">Move In / Move Out</a></li>
+          <li><a href="#services" class="text-white/50 hover:text-white text-sm transition-colors">Recurring Cleaning</a></li>
+          <li><a href="#services" class="text-white/50 hover:text-white text-sm transition-colors">Personalized Services</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white/80 text-[0.7rem] font-semibold tracking-[3px] uppercase mb-5">Service Area</h4>
+        <p class="text-white/50 text-xs mb-3 flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          SF Bay Area, California
+        </p>
+        <div class="grid grid-cols-2 gap-1">
+          <span class="text-white/40 text-xs">San Mateo</span>
+          <span class="text-white/40 text-xs">Palo Alto</span>
+          <span class="text-white/40 text-xs">Menlo Park</span>
+          <span class="text-white/40 text-xs">Redwood City</span>
+          <span class="text-white/40 text-xs">Burlingame</span>
+          <span class="text-white/40 text-xs">San Francisco</span>
+          <span class="text-white/40 text-xs">Los Altos</span>
+          <span class="text-white/40 text-xs">Atherton</span>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row justify-between items-center pt-8 gap-4">
+      <p class="text-white/30 text-xs">&copy; 2026 NovaLuxe Home Cleaning. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="privacy.html" class="text-white/30 hover:text-white/60 text-xs transition-colors">Privacy</a>
+        <a href="terms.html" class="text-white/30 hover:text-white/60 text-xs transition-colors">Terms</a>
+        <a href="blog.html" class="text-white/30 hover:text-white/60 text-xs transition-colors">Blog</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-8 right-8 z-50 w-11 h-11 bg-[#3B5B43] hover:bg-[#2d4533] text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 opacity-0 translate-y-4" aria-label="Back to top">
+  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script>
+  // Navbar hide on scroll
+  let lastScroll = 0;
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    const cur = window.scrollY;
+    if (cur > lastScroll && cur > 100) {
+      nav.style.transform = 'translateY(-100%)';
+    } else {
+      nav.style.transform = 'translateY(0)';
+    }
+    if (cur > 60) nav.style.boxShadow = '0 2px 20px rgba(0,0,0,.35)';
+    else nav.style.boxShadow = 'none';
+    lastScroll = cur;
+  });
+
+  // Back to top
+  const btn = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 600) {
+      btn.style.opacity = '1';
+      btn.style.transform = 'translateY(0)';
+    } else {
+      btn.style.opacity = '0';
+      btn.style.transform = 'translateY(16px)';
+    }
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => revealObs.observe(el));
+
+  // Count-up animation for stats
+  const statEls = document.querySelectorAll('[data-count]');
+  const countObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const el = e.target;
+        const target = parseInt(el.getAttribute('data-count'));
+        const suffix = el.getAttribute('data-suffix') || '';
+        let cur = 0;
+        const inc = target / 60;
+        const timer = setInterval(() => {
+          cur = Math.min(cur + inc, target);
+          el.textContent = Math.round(cur) + suffix;
+          if (cur >= target) clearInterval(timer);
+        }, 20);
+        countObs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  statEls.forEach(el => countObs.observe(el));
+</script>
+
+<!-- Interactive Review Modal -->
+<div id="review-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/65 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300 p-4">
+  <div class="bg-white rounded-2xl max-w-lg w-full p-8 shadow-2xl border border-[#E2E8F0] relative transform scale-95 transition-transform duration-300" id="review-modal-box">
+    <!-- Close Button -->
+    <button type="button" onclick="closeReviewModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-[#F5F0E8] hover:bg-[#E2E8F0] text-[#2D3748] flex items-center justify-center transition-colors">
+      <span class="material-symbols-outlined text-lg">close</span>
+    </button>
+
+    <!-- Header -->
+    <div class="text-center mb-6">
+      <span class="text-[#3B5B43] text-[0.65rem] font-bold tracking-[3px] uppercase block mb-1">Share Your Experience</span>
+      <h3 class="font-['Playfair_Display'] text-3xl text-[#2D3748] italic">How did we shine?</h3>
+    </div>
+
+    <!-- Platform Selector Tabs -->
+    <div class="flex rounded-xl bg-[#F5F0E8] p-1.5 mb-6 gap-1">
+      <button type="button" id="tab-direct" onclick="switchReviewTab('Direct Review')" class="flex-1 py-2 text-xs font-semibold rounded-lg transition-all text-[#2D3748]">Website</button>
+      <button type="button" id="tab-thumbtack" onclick="switchReviewTab('Thumbtack')" class="flex-1 py-2 text-xs font-semibold rounded-lg transition-all text-[#4A5568]">Thumbtack</button>
+      <button type="button" id="tab-nextdoor" onclick="switchReviewTab('Nextdoor')" class="flex-1 py-2 text-xs font-semibold rounded-lg transition-all text-[#4A5568]">Nextdoor</button>
+    </div>
+
+    <!-- Review Form -->
+    <form id="review-form" onsubmit="submitReviewForm(event)" class="space-y-4">
+      <!-- Stars Selector -->
+      <div class="text-center mb-2">
+        <label class="block text-xs font-semibold uppercase tracking-wider text-[#4A5568] mb-2">Your Rating</label>
+        <div class="flex justify-center gap-2" id="modal-stars-container">
+          <button type="button" onclick="setReviewStars(1)" class="text-2xl text-amber-400 hover:scale-125 transition-transform focus:outline-none">★</button>
+          <button type="button" onclick="setReviewStars(2)" class="text-2xl text-amber-400 hover:scale-125 transition-transform focus:outline-none">★</button>
+          <button type="button" onclick="setReviewStars(3)" class="text-2xl text-amber-400 hover:scale-125 transition-transform focus:outline-none">★</button>
+          <button type="button" onclick="setReviewStars(4)" class="text-2xl text-amber-400 hover:scale-125 transition-transform focus:outline-none">★</button>
+          <button type="button" onclick="setReviewStars(5)" class="text-2xl text-amber-400 hover:scale-125 transition-transform focus:outline-none">★</button>
+        </div>
+      </div>
+
+      <!-- Inputs -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div>
+          <label class="block text-xs font-semibold text-[#4A5568] mb-1">Your Name</label>
+          <input type="text" id="review-name" placeholder="e.g. Sofia M." required class="w-full px-3.5 py-2.5 rounded-xl border border-[#E2E8F0] text-sm focus:outline-none focus:border-[#3B5B43]"/>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-[#4A5568] mb-1">City / Neighborhood</label>
+          <input type="text" id="review-city" placeholder="e.g. Palo Alto, CA" required class="w-full px-3.5 py-2.5 rounded-xl border border-[#E2E8F0] text-sm focus:outline-none focus:border-[#3B5B43]"/>
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-xs font-semibold text-[#4A5568] mb-1">Service Provided</label>
+        <select id="review-service" class="w-full px-3.5 py-2.5 rounded-xl border border-[#E2E8F0] text-sm focus:outline-none focus:border-[#3B5B43] bg-white">
+          <option value="Standard Cleaning">Standard Cleaning</option>
+          <option value="Deep Cleaning">Deep Cleaning</option>
+          <option value="Move In / Move Out">Move In / Move Out</option>
+          <option value="Recurring Cleaning">Recurring Cleaning</option>
+          <option value="Personalized Services">Personalized Services</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-xs font-semibold text-[#4A5568] mb-1">Your Review</label>
+        <textarea id="review-text" rows="3" placeholder="Share how NovaLuxe made your home shine..." required class="w-full px-3.5 py-2.5 rounded-xl border border-[#E2E8F0] text-sm focus:outline-none focus:border-[#3B5B43]"></textarea>
+      </div>
+
+      <!-- Submit Action Button -->
+      <button type="submit" id="review-submit-btn" class="w-full py-3.5 rounded-full bg-[#3B5B43] hover:bg-[#2d4533] text-white font-bold text-xs uppercase tracking-widest shadow-lg transition-all">
+        Submit Review to NovaLuxe
+      </button>
+
+      <!-- Direct Account Profile Link Notice -->
+      <div id="modal-direct-link" class="hidden text-center pt-1">
+        <a id="modal-profile-anchor" href="https://www.thumbtack.com/instant-results/?query=NovaLuxe%20HomeCleaning" target="_blank" rel="noopener" class="text-xs text-[#718096] hover:text-[#009FD9] underline transition-colors">
+          Open NovaLuxe HomeCleaning directly on Thumbtack →
+        </a>
+      </div>
+    </form>
+
+    <!-- Success Confirmation View -->
+    <div id="review-success-view" class="hidden text-center py-6">
+      <div class="w-16 h-16 rounded-full bg-[#3B5B43]/10 text-[#3B5B43] flex items-center justify-center mx-auto mb-4">
+        <span class="material-symbols-outlined text-3xl">check</span>
+      </div>
+      <h4 class="font-['Playfair_Display'] text-2xl text-[#2D3748] italic mb-2">Thank you for your review!</h4>
+      <p class="text-[#4A5568] text-sm leading-relaxed mb-6" id="review-success-msg">Your feedback has been added and helps Bay Area homes shine.</p>
+      <button type="button" onclick="closeReviewModal()" class="px-8 py-3 rounded-full bg-[#3B5B43] text-white font-semibold text-xs tracking-widest uppercase hover:bg-[#2d4533] transition-all">
+        Back to Website
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast Notification -->
+<div id="toast-notif" class="fixed bottom-6 right-6 z-50 bg-[#0d1f14] text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 transform translate-y-20 opacity-0 transition-all duration-300">
+  <span class="material-symbols-outlined text-[#3B5B43]" id="toast-icon">check_circle</span>
+  <span class="text-xs font-medium" id="toast-text">Review copied!</span>
+</div>
+
+<script>
+  // URL oficial da conta NovaLuxe HomeCleaning no Thumbtack
+  const THUMBTACK_ACCOUNT_URL = 'https://www.thumbtack.com/instant-results/?query=NovaLuxe%20HomeCleaning';
+  const NEXTDOOR_ACCOUNT_URL = 'https://nextdoor.com/recommendations';
+
+  let currentReviewRating = 5;
+  let currentPlatform = 'Direct Review';
+
+  function showToast(msg, icon = 'check_circle') {
+    const toast = document.getElementById('toast-notif');
+    document.getElementById('toast-text').textContent = msg;
+    document.getElementById('toast-icon').textContent = icon;
+    toast.style.opacity = '1';
+    toast.style.transform = 'translateY(0)';
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateY(80px)';
+    }, 4000);
+  }
+
+  function setReviewStars(num) {
+    currentReviewRating = num;
+    const btns = document.querySelectorAll('#modal-stars-container button');
+    btns.forEach((b, idx) => {
+      if (idx < num) {
+        b.classList.remove('text-gray-300');
+        b.classList.add('text-amber-400');
+      } else {
+        b.classList.remove('text-amber-400');
+        b.classList.add('text-gray-300');
+      }
+    });
+  }
+
+  function switchReviewTab(platform) {
+    currentPlatform = platform;
+    const tabDirect = document.getElementById('tab-direct');
+    const tabThumb = document.getElementById('tab-thumbtack');
+    const tabNext = document.getElementById('tab-nextdoor');
+    const btn = document.getElementById('review-submit-btn');
+
+    [tabDirect, tabThumb, tabNext].forEach(t => {
+      t.className = 'flex-1 py-2 text-xs font-semibold rounded-lg transition-all text-[#4A5568]';
+    });
+
+    const directNotice = document.getElementById('modal-direct-link');
+    const directAnchor = document.getElementById('modal-profile-anchor');
+
+    if (platform === 'Direct Review') {
+      tabDirect.className = 'flex-1 py-2 text-xs font-semibold rounded-lg transition-all bg-white text-[#2D3748] shadow-sm';
+      btn.textContent = 'Submit Review to NovaLuxe';
+      btn.className = 'w-full py-3.5 rounded-full bg-[#3B5B43] hover:bg-[#2d4533] text-white font-bold text-xs uppercase tracking-widest shadow-lg transition-all';
+      if (directNotice) directNotice.classList.add('hidden');
+    } else if (platform === 'Thumbtack') {
+      tabThumb.className = 'flex-1 py-2 text-xs font-semibold rounded-lg transition-all bg-[#009FD9] text-white shadow-sm';
+      btn.textContent = 'Copy Review & Open Thumbtack';
+      btn.className = 'w-full py-3.5 rounded-full bg-[#009FD9] hover:bg-[#0088ba] text-white font-bold text-xs uppercase tracking-widest shadow-lg transition-all';
+      if (directNotice && directAnchor) {
+        directNotice.classList.remove('hidden');
+        directAnchor.href = THUMBTACK_ACCOUNT_URL;
+        directAnchor.textContent = 'Open NovaLuxe HomeCleaning directly on Thumbtack →';
+      }
+    } else if (platform === 'Nextdoor') {
+      tabNext.className = 'flex-1 py-2 text-xs font-semibold rounded-lg transition-all bg-[#00B246] text-white shadow-sm';
+      btn.textContent = 'Copy Review & Open Nextdoor';
+      btn.className = 'w-full py-3.5 rounded-full bg-[#00B246] hover:bg-[#009a3c] text-white font-bold text-xs uppercase tracking-widest shadow-lg transition-all';
+      if (directNotice && directAnchor) {
+        directNotice.classList.remove('hidden');
+        directAnchor.href = NEXTDOOR_ACCOUNT_URL;
+        directAnchor.textContent = 'Open NovaLuxe directly on Nextdoor →';
+      }
+    }
+  }
+
+  function openReviewModal(platform = 'Direct Review', initialStars = 5) {
+    const modal = document.getElementById('review-modal');
+    const box = document.getElementById('review-modal-box');
+    document.getElementById('review-form').classList.remove('hidden');
+    document.getElementById('review-success-view').classList.add('hidden');
+
+    setReviewStars(initialStars);
+    switchReviewTab(platform);
+
+    modal.classList.remove('opacity-0', 'pointer-events-none');
+    box.classList.remove('scale-95');
+    box.classList.add('scale-100');
+  }
+
+  function closeReviewModal() {
+    const modal = document.getElementById('review-modal');
+    const box = document.getElementById('review-modal-box');
+    modal.classList.add('opacity-0', 'pointer-events-none');
+    box.classList.remove('scale-100');
+    box.classList.add('scale-95');
+  }
+
+  function submitReviewForm(e) {
+    e.preventDefault();
+    const name = document.getElementById('review-name').value.trim() || 'Valued Client';
+    const city = document.getElementById('review-city').value.trim() || 'SF Bay Area';
+    const text = document.getElementById('review-text').value.trim();
+    const service = document.getElementById('review-service').value;
+
+    if (currentPlatform === 'Thumbtack' || currentPlatform === 'Nextdoor') {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text);
+      }
+      showToast('Review copied! Opening ' + currentPlatform + '...', 'content_copy');
+      setTimeout(() => {
+        const url = currentPlatform === 'Thumbtack'
+          ? THUMBTACK_ACCOUNT_URL
+          : NEXTDOOR_ACCOUNT_URL;
+        window.open(url, '_blank');
+        closeReviewModal();
+      }, 900);
+      return;
+    }
+
+    // Direct Website Review: Save to localStorage & prepend to UI
+    const newReview = {
+      name,
+      city,
+      text,
+      rating: currentReviewRating,
+      service,
+      platform: 'NovaLuxe Direct',
+      date: new Date().toLocaleDateString()
+    };
+
+    const existing = JSON.parse(localStorage.getItem('novaluxe_user_reviews') || '[]');
+    existing.unshift(newReview);
+    localStorage.setItem('novaluxe_user_reviews', JSON.stringify(existing));
+
+    renderReviewCard(newReview, true);
+
+    document.getElementById('review-form').classList.add('hidden');
+    document.getElementById('review-success-view').classList.remove('hidden');
+    showToast('Your review has been added!', 'star');
+  }
+
+  function renderReviewCard(rev, prepend = false) {
+    const grid = document.getElementById('reviews-grid');
+    if (!grid) return;
+
+    const initials = rev.name.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2);
+    const starsHtml = Array(rev.rating || 5).fill('<svg class="w-3.5 h-3.5 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>').join('');
+
+    const card = document.createElement('div');
+    card.className = 'bg-white rounded-2xl p-8 shadow-sm border border-[#3B5B43]/30 relative animate-fade-in';
+    card.innerHTML = `
+      <span class="font-['Playfair_Display'] text-6xl text-[#3B5B43]/20 absolute top-4 left-6 leading-none">"</span>
+      <div class="inline-flex items-center gap-1.5 bg-[#3B5B43]/10 text-[#3B5B43] text-[0.65rem] font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4">
+        ★ Verified Client
+      </div>
+      <div class="flex mb-4">${starsHtml}</div>
+      <p class="text-[#4A5568] text-sm leading-relaxed mb-6">"${rev.text}"</p>
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full bg-[#3B5B43] text-white text-xs font-bold flex items-center justify-center flex-shrink-0">${initials}</div>
+        <div>
+          <strong class="text-[#2D3748] text-sm block">${rev.name}</strong>
+          <span class="text-[#4A5568] text-xs">${rev.city}</span>
+        </div>
+      </div>
+    `;
+
+    if (prepend && grid.firstChild) {
+      grid.insertBefore(card, grid.firstChild);
+    } else {
+      grid.appendChild(card);
+    }
+  }
+
+  // Load custom reviews on startup
+  window.addEventListener('DOMContentLoaded', () => {
+    const saved = JSON.parse(localStorage.getItem('novaluxe_user_reviews') || '[]');
+    saved.forEach(rev => renderReviewCard(rev, false));
+  });
+</script>
 </body>
 </html>
