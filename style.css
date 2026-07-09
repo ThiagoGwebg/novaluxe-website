@@ -1,0 +1,118 @@
+robody {
+    background-color: #F5F0E8;
+    /* bgCream */
+    font-family: 'Inter', sans-serif;
+    color: #2D3748;
+    /* textDark */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.font-serif {
+    font-family: 'Playfair Display', serif;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    font-size: inherit;
+    vertical-align: middle;
+}
+
+/* Drop Cap for Blog Posts */
+.drop-cap::first-letter {
+    float: left;
+    font-size: 5rem;
+    line-height: 4rem;
+    padding-right: .75rem;
+    padding-top: .25rem;
+    font-family: 'Playfair Display', serif;
+    color: #3B5B43;
+    /* primary */
+    font-weight: 700;
+}
+
+/* Animations & Transitions */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-kicker {
+    animation: fadeUp 0.7s ease both;
+    animation-delay: 0.1s;
+}
+
+.hero-h1 {
+    animation: fadeUp 0.7s ease both;
+    animation-delay: 0.25s;
+}
+
+.hero-sub {
+    animation: fadeUp 0.7s ease both;
+    animation-delay: 0.4s;
+}
+
+.hero-btns {
+    animation: fadeUp 0.7s ease both;
+    animation-delay: 0.55s;
+}
+
+.hero-trust {
+    animation: fadeUp 0.7s ease both;
+    animation-delay: 0.7s;
+}
+
+.service-card-overlay {
+    transition: opacity 0.4s ease;
+}
+
+.group:hover .service-card-overlay {
+    opacity: 0.75 !important;
+}
+
+.group:hover .service-card-info {
+    transform: translateY(0) !important;
+}
+
+.service-card-info {
+    transition: transform 0.4s ease;
+}
+
+@keyframes scrollBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+}
+
+.scroll-bounce {
+    animation: scrollBounce 1.5s ease-in-out infinite;
+}
+
+.city-tag:hover {
+    background: #3B5B43;
+    color: #fff;
+}
