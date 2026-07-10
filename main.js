@@ -1,16 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Configuração dos links das redes/plataformas ---
-    const THUMBTACK_URL = "https://www.thumbtack.com/instant-results/?query=NovaLuxe%20HomeCleaning";
-    // O link do Nextdoor costuma ser algo como https://nextdoor.com/pages/novaluxe-h/
-    // Substitua a URL abaixo pelo link exato copiado do seu painel comercial do Nextdoor.
-    const NEXTDOOR_URL = "https://nextdoor.com/pages/novaluxe-h";
-
-    // Atualiza os links de avaliação dinamicamente
-    document.getElementById('thumbtack-text-link')?.setAttribute('href', THUMBTACK_URL);
-    document.getElementById('thumbtack-btn-link')?.setAttribute('href', THUMBTACK_URL);
-    document.getElementById('nextdoor-text-link')?.setAttribute('href', NEXTDOOR_URL);
-    document.getElementById('nextdoor-btn-link')?.setAttribute('href', NEXTDOOR_URL);
-
     // --- Navbar hide on scroll ---
     let lastScroll = 0;
     const nav = document.querySelector('header'); // Usar querySelector para pegar o header em todas as páginas
