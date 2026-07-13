@@ -1,0 +1,17 @@
+RewriteEngine On
+
+# ── URLs limpas (sem .html) ──────────────────────────────────────────────
+# Ex.: novaluxesc.com/blog  em vez de  novaluxesc.com/blog.html
+
+# 1) Redireciona qualquer acesso a "/pagina.html" para "/pagina" (301, permanente)
+#    Assim o Google reindexa a URL limpa e o visitante nunca vê o .html.
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# 2) Serve internamente o arquivo .html quando a URL limpa for acessada.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# ── Página de erro amigável (opcional) ───────────────────────────────────
+# ErrorDocument 404 /404.html
