@@ -14,12 +14,52 @@
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
     rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#3B5B43",
+            primaryHover: "#2d4533",
+            cream: "#F5F0E8",
+            dark: "#2D3748",
+            muted: "#4A5568",
+            navDark: "#0d1f14"
+          },
+          fontFamily: {
+            serif: ["Playfair Display", "serif"],
+            display: ["Playfair Display", "serif"],
+            body: ["Inter", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="antialiased">
 
-  <!-- @@include('partials/header-blog.html') -->
+  <header class="sticky top-0 z-50 bg-[#0d1f14] shadow-md"
+    style="transition:transform 0.3s ease, box-shadow 0.3s ease;">
+    <div class="max-w-7xl mx-auto px-8 flex justify-between items-center" style="height:72px;">
+      <a href="index.html"><img src="assets/images/novaluxe-logo.png" alt="NovaLuxe"
+          style="height:50px;width:auto;filter:brightness(0) invert(1);" /></a>
+      <nav class="hidden md:flex items-center gap-x-10">
+        <a class="text-gray-300 text-[0.75rem] tracking-widest uppercase hover:text-white transition-colors"
+          href="index.html#services">Services</a>
+        <a class="text-gray-300 text-[0.75rem] tracking-widest uppercase hover:text-white transition-colors"
+          href="index.html#about-us">About Us</a>
+        <a class="text-gray-300 text-[0.75rem] tracking-widest uppercase hover:text-white transition-colors"
+          href="index.html#area">Service Area</a>
+        <a class="text-white border-b border-[#3B5B43] pb-0.5 text-[0.75rem] tracking-widest uppercase"
+          href="blog.html">Blog</a>
+      </nav>
+      <a href="index.html#quote"
+        class="bg-[#3B5B43] hover:bg-[#2d4533] text-white px-5 py-2.5 rounded-full text-xs font-semibold tracking-widest uppercase transition-all">Request
+        Quote</a>
+    </div>
+  </header>
 
   <main>
     <section class="relative h-[520px] w-full overflow-hidden">
@@ -42,7 +82,7 @@
       </div>
     </section>
 
-    <article class="max-w-[750px] mx-auto px-6 py-20">
+    <article class="max-w-[750px] mx-auto px-8 py-20">
       <p class="drop-cap text-[#4A5568] text-lg md:text-xl font-semibold leading-relaxed mb-10">
         One of the biggest misconceptions about cleaning is that a single product can be used everywhere. This
         assumption — common even among well-meaning homeowners — is one of the leading causes of surface damage, residue
@@ -144,9 +184,83 @@
   </main>
 
   <!-- Footer -->
-  <!-- @@include('partials/footer-blog.html') -->
+  <footer class="bg-[#2d4533]">
+    <div class="max-w-7xl mx-auto px-8 pt-16 pb-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-white/10">
+        <div>
+          <img src="assets/images/novaluxe-logo.png" alt="NovaLuxe"
+            style="height:46px;width:auto;filter:brightness(0) invert(1); opacity:.85;" class="mb-4" />
+          <p class="text-white/50 text-sm leading-relaxed mb-4">Luxury residential cleaning service in the San
+            Francisco Bay Area. Every home shines with the care it deserves.</p>
+          <a href="tel:+16502475945"
+            class="flex items-center gap-2 text-white/70 hover:text-white text-sm mt-4 transition-colors">
+            <svg class="w-4 h-4 text-[#3B5B43]" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 11.5a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z" />
+            </svg>
+            (650) 247-5945
+          </a>
+          <a href="mailto:contact@novaluxesc.com"
+            class="flex items-center gap-2 text-white/70 hover:text-white text-sm mt-2 transition-colors">
+            <svg class="w-4 h-4 text-[#3B5B43]" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            contact@novaluxesc.com
+          </a>
+        </div>
+        <div>
+          <h4 class="text-white/80 text-[0.7rem] font-semibold tracking-[3px] uppercase mb-5">Services</h4>
+          <ul class="space-y-2.5">
+            <li><a href="index.html#services" class="text-white/50 hover:text-white text-sm transition-colors">Standard
+                Cleaning</a></li>
+            <li><a href="index.html#services" class="text-white/50 hover:text-white text-sm transition-colors">Deep
+                Cleaning</a></li>
+            <li><a href="index.html#services" class="text-white/50 hover:text-white text-sm transition-colors">Move In /
+                Move Out</a></li>
+            <li><a href="index.html#services" class="text-white/50 hover:text-white text-sm transition-colors">Recurring
+                Cleaning</a></li>
+            <li><a href="index.html#services"
+                class="text-white/50 hover:text-white text-sm transition-colors">Personalized Services</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white/80 text-[0.7rem] font-semibold tracking-[3px] uppercase mb-5">Service Area</h4>
+          <p class="text-white/50 text-xs mb-3 flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z" />
+              <circle cx="12" cy="10" r="2.5" />
+            </svg>
+            SF Bay Area, California
+          </p>
+          <div class="grid grid-cols-2 gap-1">
+            <span class="text-white/40 text-xs">San Mateo</span>
+            <span class="text-white/40 text-xs">Palo Alto</span>
+            <span class="text-white/40 text-xs">Menlo Park</span>
+            <span class="text-white/40 text-xs">Redwood City</span>
+            <span class="text-white/40 text-xs">Burlingame</span>
+            <span class="text-white/40 text-xs">San Francisco</span>
+            <span class="text-white/40 text-xs">Los Altos</span>
+            <span class="text-white/40 text-xs">Atherton</span>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row justify-between items-center pt-8 gap-4">
+        <p class="text-white/30 text-xs">&copy; 2026 NovaLuxe Home Cleaning. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="privacy.html" class="text-white/30 hover:text-white/60 text-xs transition-colors">Privacy</a>
+          <a href="terms.html" class="text-white/30 hover:text-white/60 text-xs transition-colors">Terms</a>
+          <a href="blog.html" class="text-white/30 hover:text-white/60 text-xs transition-colors">Blog</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src="main.js"></script>
+  <script src="mobile-nav.js" defer></script>
 </body>
 
 </html>
